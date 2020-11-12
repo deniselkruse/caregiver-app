@@ -1,19 +1,18 @@
+import React from 'react';
+import 'bootstrap/dist/css/bootstrap.css';
 import './App.css';
-import React from 'react'
 
-import Sitebar from './components/home/Navbar'
-import Header from './components/home/Header'
+import Banner from './components/Banner'
+import Header from './components/Header'
+
 
 function App() {
   return (
     <div>
-      <p>This app is a Beast!</p>
-      <Header/>
-      <Sitebar/>
+      <Header />
+      <Banner />
     </div>
   );
 }
-    
-      
 
 export default App;
