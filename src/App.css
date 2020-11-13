@@ -1,6 +1,6 @@
 .App {
     text-align: center;
-  }
+}
 
 /* NAVBAR */
 
@@ -25,4 +25,26 @@
 
 .banner  p {
   margin-top: 0.2em!important;
+}
+
+/* AUTH */
+
+.login, .register{
+  display: inline-block;
+  position: relative;
+  text-align: center;
+}
+
+/* .loginHeader, .registerHeader {
+  display: inline-block;
+  position: absolute;
+  text-align: center;
+} */
+
+.email {
+  width: 20em;
+}
+
+.password {
+  width: 20em;
 }

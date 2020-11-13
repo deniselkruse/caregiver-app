@@ -6,7 +6,8 @@ const Banner = () => {
         <div>
             <Navbar className="banner">
                 <Row>
-                    <p>Caregiver App Banner </p>
+                    <br />
+                    <br />
                 </Row>
             </Navbar>
         </div>
