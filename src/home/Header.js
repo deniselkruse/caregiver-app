@@ -12,9 +12,9 @@ const Header = (props) => {
         <div>
             <Navbar color="faded" light>
                 <NavbarBrand href="/" className="mr-auto">
-                    <i className="fas fa-house-user" color="#f58b44"></i>
+                    <i className="fas fa-house-user" id="houseLogo" color="#f58b44"></i>
                 </NavbarBrand>
-                <NavbarToggler onClick={toggleNavbar} className="mr-2" />
+                <NavbarToggler onClick={toggleNavbar} className="mr-2" id="hamburger" />
                 <Collapse isOpen={!collapsed} navbar>
                     <Nav navbar>
                         <NavItem>
@@ -24,7 +24,7 @@ const Header = (props) => {
                             <NavLink href="/">Example 2</NavLink>
                         </NavItem>
                         <NavItem>
-                        <Button onClick={props.clickLogout}>Logout</Button>
+                            <Button onClick={props.clickLogout}>Logout</Button>
                         </NavItem>
                     </Nav>
                 </Collapse>

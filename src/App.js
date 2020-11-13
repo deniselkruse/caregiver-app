@@ -4,6 +4,7 @@ import './App.css';
 
 import Banner from './home/Banner';
 import Header from './home/Header';
+import Patient from './caregiver/Patient';
 
 import Auth from './auth/Auth';
 
@@ -28,7 +29,7 @@ function App() {
   }
 
   const protectedViews = () => {
-    return (sessionToken === localStorage.getItem('token') ? <Header token={sessionToken} /> // Change this to something other than Header!!!!
+    return (sessionToken === localStorage.getItem('token') ? <Patient token={sessionToken} /> 
       : <Auth updateToken={updateToken} />)
   }
 

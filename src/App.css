@@ -5,9 +5,16 @@
 /* NAVBAR */
 
 .homeLogo {
-  color: orange;
+  color: #f47d31;
 }
 
+#houseLogo {
+  font-size: 2.2em;
+}
+
+#hamburger {
+  color: #f47d31;
+}
 
 /* BANNER */
 
@@ -47,4 +54,19 @@
 
 .password {
   width: 20em;
+}
+
+/* PATIENT LANDING PAGE */
+
+
+.patientIcons {
+  display: block;
+  position: relative;
+  text-align: center;
+  margin-top: 3em;
+}
+
+#viewAll, #findPatient, #addPatient {
+  font-size: 5em;
+  color: #f47d31;
 }
