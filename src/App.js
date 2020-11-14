@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
 import './App.css';
+import {BrowserRouter as Router} from 'react-router-dom';
 
 import Banner from './home/Banner';
 import Header from './home/Header';
-import Patient from './caregiver/Patient';
+import HomePage from './home/HomePage';
 
 import Auth from './auth/Auth';
 
@@ -29,7 +30,7 @@ function App() {
   }
 
   const protectedViews = () => {
-    return (sessionToken === localStorage.getItem('token') ? <Patient token={sessionToken} /> 
+    return (sessionToken === localStorage.getItem('token') ? <Router><HomePage token={sessionToken} /></Router>
       : <Auth updateToken={updateToken} />)
   }
 

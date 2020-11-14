@@ -5,7 +5,8 @@ const PatientList = (props) => {
 
     return (
         <div>
-            {props.patients.map((pObj, i) => <IndividualPatient p={pObj} key={i} />)}
+            {props.patients.map((pObj, i) => 
+            <IndividualPatient p={pObj} key={i} />)}
         </div>
     )
 }
