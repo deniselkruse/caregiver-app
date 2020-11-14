@@ -1,15 +1,14 @@
 import './App.css';
 import React from 'react'
 
-import Sitebar from './components/Navbar'
+import Banner from './components/Banner'
 import Header from './components/Header'
 
 function App() {
   return (
     <div>
-      <p>This app is a Beast!</p>
       <Header/>
-      <Sitebar/>
+      <Banner/>
     </div>
   );
 }

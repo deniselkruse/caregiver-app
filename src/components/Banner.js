@@ -1,14 +1,14 @@
 import React from 'react';
 import {Navbar, NavbarBrand} from 'reactstrap'
 
-const Sitebar = () => {
+const Banner = () => {
     return(
         <div>
         <Navbar color="faded" light expand='md'>
-            <NavbarBrand href="/">Caregiver App</NavbarBrand>
+           Banner
         </Navbar>
         </div>
     )
 }
 
-export default Sitebar;
+export default Banner;
