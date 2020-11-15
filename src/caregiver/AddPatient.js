@@ -43,7 +43,7 @@ const AddPatient = (props) => {
             caregiverNotes: caregiverNotes,
             // owner: owner
         }
-        fetch('http://localhost:3000/patient', {
+        fetch('http://localhost:3000/patient/create', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -111,10 +111,10 @@ const AddPatient = (props) => {
                         <Input type="textarea" id="caregiverNotes" value={caregiverNotes} onChange={e => setCaregiverNotes(e.target.value)} />
                         <Label htmlFor="caregiverNotes" className="addPatientLabel">Caregiver Notes</Label>
                     </Row>
+                    <Row className="addPatientButton">
+                        <Button type="submit" onClick={handleSubmit}>Add New Patient</Button>
+                    </Row>
                 </Form>
-                <Row className="addPatientButton">
-                    <Button onClick={handleSubmit}>Add New Patient</Button>
-                </Row>
                 <br />
                 <br />
             </Container>
