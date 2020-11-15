@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
-import { Button, Form, Label, Input } from 'reactstrap';
+import { Button, Container, Form, Label, Input, Col, Row } from 'reactstrap';
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 
 const AddPatient = (props) => {
 
@@ -59,36 +61,63 @@ const AddPatient = (props) => {
 
     return (
         <div>
-            <Form>
-                <Label htmlFor="name">Name:</Label>
-                <Input id="name" value={name} onChange={e => setName(e.target.value)} />
-
-                <Label htmlFor="preferredName">Preferred Name:</Label>
-                <Input id="preferredName" value={preferredName} onChange={e => setAge(e.target.value)} />
-
-                <Label htmlFor="age">Age:</Label>
-                <Input id="age" value={age} onChange={e => setName(e.target.value)} />
-
-                <Label htmlFor="gender">Gender:</Label>
-                <Input id="gender" value={gender} onChange={e => setGender(e.target.value)} />
-
-                <Label htmlFor="race">Race:</Label>
-                <Input id="race" value={race} onChange={e => setRace(e.target.value)} />
-
-                <Label htmlFor="location">Location:</Label>
-                <Input id="location" value={location} onChange={e => setLocation(e.target.value)} />
-
-                <Label htmlFor="medication">Medication:</Label>
-                <Input id="medication" type="checkbox" checked={medication} onChange={() => setMedication(!medication)} />
-
-                <Label htmlFor="careStart">Care Start Date:</Label>
-                <Input id="careStart" value={careStart} onChange={e => setCareStart(e.target.value)} />
-
-                <Label htmlFor="caregiverNotes">Caregiver Notes:</Label>
-                <Input id="caregiverNotes" value={caregiverNotes} onChange={e => setCaregiverNotes(e.target.value)} />
-            </Form>
-
-            <Button onClick={handleSubmit}>Add New Patient</Button>
+            <Container className="addPatientContainer">
+                <Form className="addPatientForm my-auto">
+                    <Row className="center">
+                        <Input id="name" value={name} onChange={e => setName(e.target.value)} />
+                        <Label htmlFor="name" className="addPatientLabel">Patient Name</Label>
+                    </Row>
+                    <br />
+                    <Row className="center">
+                        <Input id="preferredName" value={preferredName} onChange={e => setPreferredName(e.target.value)} />
+                        <Label htmlFor="preferredName" className="addPatientLabel">Preferred Name</Label>
+                    </Row>
+                    <br />
+                    <Row className="center">
+                        <Input id="location" value={location} onChange={e => setLocation(e.target.value)} />
+                        <Label htmlFor="location" className="addPatientLabel">Location</Label>
+                    </Row>
+                    <br />
+                    <Row className="genderRace">
+                        <Col>
+                            <Input id="gender" value={gender} onChange={e => setGender(e.target.value)} />
+                            <Label htmlFor="gender" className="addPatientLabel">Gender</Label>
+                        </Col>
+                        <Col>
+                            <Input id="race" value={race} onChange={e => setRace(e.target.value)} />
+                            <Label htmlFor="race" className="addPatientLabel">Race</Label>
+                        </Col>
+                    </Row>
+                    <br />
+                    <Row className="ageMed">
+                        <Col>
+                            <Input id="age" value={age} onChange={e => setAge(e.target.value)} />
+                            <br />
+                            <Label htmlFor="age" className="addPatientLabel">Age</Label>
+                        </Col>
+                        <Col className="my-auto">
+                            <Input id="medication" type="checkbox" checked={medication} onChange={() => setMedication(!medication)} />
+                            <Label htmlFor="medication" className="addPatientLabel">Medication?</Label>
+                        </Col>
+                    </Row>
+                    <br />
+                    <Row className="center">
+                        <DatePicker id="careStart" selected={careStart} onChange={date => setCareStart(date)} />
+                        <br />
+                        <Label htmlFor="careStart" className="addPatientLabel">Care Start Date</Label>
+                    </Row>
+                    <br />
+                    <Row className="center">
+                        <Input type="textarea" id="caregiverNotes" value={caregiverNotes} onChange={e => setCaregiverNotes(e.target.value)} />
+                        <Label htmlFor="caregiverNotes" className="addPatientLabel">Caregiver Notes</Label>
+                    </Row>
+                </Form>
+                <Row className="addPatientButton">
+                    <Button onClick={handleSubmit}>Add New Patient</Button>
+                </Row>
+                <br />
+                <br />
+            </Container>
         </div>
     )
 }

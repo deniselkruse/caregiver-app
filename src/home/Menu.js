@@ -2,7 +2,8 @@ import React from 'react';
 import { Row, Col } from 'reactstrap';
 import { Link } from 'react-router-dom';
 
-const MenuPage = () => {
+
+const Menu = (props) => {
 
     return (
         <div>
@@ -19,7 +20,7 @@ const MenuPage = () => {
                     </Row>
                 </Link>
                 <h5>Find Patient</h5>
-                <Link to="/create">
+                <Link to="/patient/create">
                     <Row className="patientIcons">
                         <i className="fas fa-user-plus" id="addPatient"></i>
                     </Row>
@@ -30,4 +31,4 @@ const MenuPage = () => {
     )
 }
 
-export default MenuPage;
+export default Menu;
