@@ -14,48 +14,39 @@ const AddPatient = (props) => {
     const [medication, setMedication] = useState(false)
     const [careStart, setCareStart] = useState('')
     const [caregiverNotes, setCaregiverNotes] = useState('')
-    // const [owner, setOwner] = useState('') // ????
-
-    const resetForm = () => {
-        setName('')
-        setPreferredName('')
-        setAge('')
-        setGender('')
-        setRace('')
-        setLocation('')
-        setMedication(false)
-        setCareStart('')
-        setCaregiverNotes('')
-        // setOwner('') // ????
-    }
 
     const handleSubmit = (e) => {
-        e.preventDefault()
-        const body = {
-            name: name,
-            preferredName: preferredName,
-            age: age,
-            gender: gender,
-            race: race,
-            location: location,
-            medication: medication,
-            careStart: careStart,
-            caregiverNotes: caregiverNotes,
-            // owner: owner
-        }
+        e.preventDefault();
         fetch('http://localhost:3000/patient/create', {
             method: 'POST',
-            headers: {
+            body: JSON.stringify({ patient: {
+                name: name,
+                preferredName: preferredName,
+                age: age,
+                gender: gender,
+                race: race,
+                location: location,
+                medication: medication,
+                careStart: careStart,
+                caregiverNotes: caregiverNotes
+            }}),
+            headers: new Headers({
                 'Content-Type': 'application/json',
                 'Authorization': props.sessionToken
-            },
-            body: JSON.stringify(body)
-        })
-            .then(response => response.json())
-            .then(rObj => {
-                console.log(rObj)
-                resetForm()
-                props.fetchPatients()
+            }),
+        }).then(response => response.json())
+            .then((patientData) => {
+                console.log(patientData);
+                setName('');
+                setPreferredName('');
+                setAge('');
+                setGender('');
+                setRace('');
+                setLocation('');
+                setMedication(false);
+                setCareStart('');
+                setCaregiverNotes('');
+                props.fetchPatients();
             })
     }
 
@@ -102,7 +93,7 @@ const AddPatient = (props) => {
                     </Row>
                     <br />
                     <Row className="center">
-                        <DatePicker id="careStart" selected={careStart} onChange={date => setCareStart(date)} />
+                        <DatePicker id="careStart" selected={careStart} onChange={date => {console.log(date); setCareStart(date)}} />
                         <br />
                         <Label htmlFor="careStart" className="addPatientLabel">Care Start Date</Label>
                     </Row>
