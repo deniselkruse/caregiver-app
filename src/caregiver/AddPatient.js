@@ -14,22 +14,74 @@ const AddPatient = (props) => {
     const [medication, setMedication] = useState(false)
     const [careStart, setCareStart] = useState('')
     const [caregiverNotes, setCaregiverNotes] = useState('')
+    const [startDate, setStartDate] = useState('')
+    const [reqDate, setReqDate] = useState('')
+
+    const handleChange = (date) => {
+        let tempString = date.toString().substring(4, 7)
+        let monthDate;
+        switch (tempString) {
+            case "Jan":
+                monthDate = 1
+                break;
+            case "Feb":
+                monthDate = 2
+                break;
+            case "Mar":
+                monthDate = 3
+                break;
+            case "Apr":
+                monthDate = 4
+                break;
+            case "May":
+                monthDate = 5
+                break;
+            case "Jun":
+                monthDate = 6
+                break;
+            case "Jul":
+                monthDate = 7
+                break;
+            case "Aug":
+                monthDate = 8
+                break;
+            case "Sep":
+                monthDate = 9
+                break;
+            case "Oct":
+                monthDate = 10
+                break;
+            case "Nov":
+                monthDate = 11
+                break;
+            case "Dec":
+                monthDate = 12
+                break;
+            default: break
+        }
+        let fullDate = monthDate + "/" + date.toString().substring(8, 10) + "/" + date.toString().substring(11, 16)
+        setReqDate(fullDate)
+        console.log(reqDate)
+    }
+
 
     const handleSubmit = (e) => {
         e.preventDefault();
         fetch('http://localhost:3000/patient/create', {
             method: 'POST',
-            body: JSON.stringify({ patient: {
-                name: name,
-                preferredName: preferredName,
-                age: age,
-                gender: gender,
-                race: race,
-                location: location,
-                medication: medication,
-                careStart: careStart,
-                caregiverNotes: caregiverNotes
-            }}),
+            body: JSON.stringify({
+                patient: {
+                    name: name,
+                    preferredName: preferredName,
+                    age: age,
+                    gender: gender,
+                    race: race,
+                    location: location,
+                    medication: medication,
+                    careStart: reqDate,
+                    caregiverNotes: caregiverNotes
+                }
+            }),
             headers: new Headers({
                 'Content-Type': 'application/json',
                 'Authorization': props.sessionToken
@@ -93,7 +145,7 @@ const AddPatient = (props) => {
                     </Row>
                     <br />
                     <Row className="center">
-                        <DatePicker id="careStart" selected={careStart} onChange={date => {console.log(date); setCareStart(date)}} />
+                        <DatePicker className="datePicker" id="careStart" selected={startDate} onChange={handleChange} />
                         <br />
                         <Label htmlFor="careStart" className="addPatientLabel">Care Start Date</Label>
                     </Row>
@@ -116,5 +168,4 @@ const AddPatient = (props) => {
 export default AddPatient;
 
 // How to set "Gender" and "Race" to drop down menu?
-// How to auto populate owner id?
-// How to incorporate calendar into careStart date?
+

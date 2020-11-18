@@ -29,7 +29,7 @@ const HomePage = (props) => {
         <div>
             <div>
                 <Switch>
-                    <Route exact path="/mine"><PatientList patients={patients} /></Route>
+                    <Route exact path="/mine"><PatientList patients={patients} sessionToken={props.sessionToken} fetchPatients={fetchPatients}/></Route>
                     <Route exact path="/:name"></Route>
                     <Route exact path="/patient/create"><AddPatient sessionToken={props.sessionToken} fetchPatients={fetchPatients} /></Route>
                     <Route exact path="/"><Menu /></Route>
