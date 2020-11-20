@@ -1,50 +1,153 @@
 .App {
-    text-align: center;
+  text-align: center;
+}
+
+html, body {
+height: 100%;
 }
 
 /* NAVBAR */
 
 .homeLogo {
-  color: orange;
+color: #f47d31;
 }
 
+#houseLogo {
+font-size: 2.2em;
+}
+
+#hamburger {
+color: #f47d31;
+}
 
 /* BANNER */
 
 .banner {
-  margin-top: 0.1em!important;
-  text-align: center;
-  background-color: #7bcdc8; 
-  color: white;
-  max-width: 100;
+margin-top: 0.1em!important;
+text-align: center;
+background-color: #7bcdc8; 
+color: white;
+max-width: 100;
 }
 
 .banner a {
-  color: white;
+color: white;
 }
 
 .banner  p {
-  margin-top: 0.2em!important;
+margin-top: 0.2em!important;
 }
 
 /* AUTH */
 
 .login, .register{
-  display: inline-block;
-  position: relative;
-  text-align: center;
+display: inline-block;
+position: relative;
+text-align: center;
 }
 
 /* .loginHeader, .registerHeader {
-  display: inline-block;
-  position: absolute;
-  text-align: center;
+display: inline-block;
+position: absolute;
+text-align: center;
 } */
 
 .email {
-  width: 20em;
+width: 20em;
 }
 
 .password {
-  width: 20em;
+width: 20em;
+}
+
+/* MENU PAGE */
+
+.patientIcons {
+display: block;
+position: relative;
+text-align: center;
+margin-top: 3em;
+}
+
+#viewAll, #findPatient, #addPatient {
+font-size: 5em;
+color: #f47d31;
+}
+
+/* PATIENT CARDS */
+
+.addPatientContainer{
+display: inline-block;
+position: relative;
+text-align: center;
+}
+
+.addPatientForm{
+display: inline-block;
+position: relative;
+align-content: center;
+}
+
+.patientCard {
+width: 25em;
+display: block;
+position: relative;
+margin-top: 1.5em;
+padding: 1em;
+}
+
+/* ADD PATIENT */
+
+.addPatientForm {
+padding: 1em;
+display: inline-block;
+position: relative;
+text-align: center;
+}
+
+.addPatientLabel {
+font-size: 1em;
+}
+
+.center {
+display: inline-block;
+position: relative;
+text-align: center;
+margin-top: .5em;
+margin-bottom: .5em;
+}
+
+.genderRace, .ageMed {
+margin-top: .5em;
+}
+
+#name, #preferredName, #location {
+width: 20em;
+}
+
+#gender, #race {
+width: 9em;
+}
+
+#age {
+width: 5em;
+display: inline-block;
+position: relative;
+text-align: center;
+}
+
+.medication {
+display: block;
+position: relative;
+text-align: center;
+}
+
+#caregiverNotes {
+width: 20em;
+}
+
+.addPatientButton {
+display: block;
+position: relative;
+text-align: center;
 }
