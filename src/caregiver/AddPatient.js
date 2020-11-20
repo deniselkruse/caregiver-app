@@ -14,6 +14,7 @@ const AddPatient = (props) => {
     const [medication, setMedication] = useState(false)
     const [careStart, setCareStart] = useState('')
     const [caregiverNotes, setCaregiverNotes] = useState('')
+
     const [startDate, setStartDate] = useState('')
     const [reqDate, setReqDate] = useState('')
 

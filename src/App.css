@@ -76,7 +76,7 @@ html, body {
 
 /* PATIENT CARDS */
 
-.patientContainer{
+.patientContainer {
   display: inline-block;
   position: relative;
   text-align: center;
@@ -152,3 +152,10 @@ html, body {
   text-align: center;
 }
 
+/* JOURNAL CREATE */
+
+.journalContainer {
+  display: inline-block;
+  position: relative;
+  text-align: center;
+}

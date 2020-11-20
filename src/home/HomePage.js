@@ -5,7 +5,6 @@ import PatientList from '../caregiver/PatientList'
 import AddPatient from '../caregiver/AddPatient';
 import Menu from '../home/Menu';
 
-
 const HomePage = (props) => {
 
     const [patients, setPatients] = useState([])
