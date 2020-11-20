@@ -18,10 +18,13 @@ const Header = (props) => {
                 <Collapse isOpen={!collapsed} navbar>
                     <Nav navbar>
                         <NavItem>
-                            <NavLink href="/">Example 1</NavLink>
+                            <NavLink href="/">Home</NavLink>
                         </NavItem>
                         <NavItem>
-                            <NavLink href="/">Example 2</NavLink>
+                            <NavLink href="/mine">View All</NavLink>
+                        </NavItem>
+                        <NavItem>
+                            <NavLink href="/patient/create">Add Patient</NavLink>
                         </NavItem>
                         <NavItem>
                             <Button onClick={props.clickLogout}>Logout</Button>

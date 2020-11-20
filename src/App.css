@@ -76,13 +76,13 @@ html, body {
 
 /* PATIENT CARDS */
 
-.addPatientContainer{
+.patientContainer{
   display: inline-block;
   position: relative;
   text-align: center;
 }
 
-.addPatientForm{
+.patientForm{
   display: inline-block;
   position: relative;
   align-content: center;
@@ -98,14 +98,14 @@ html, body {
 
 /* ADD PATIENT */
 
-.addPatientForm {
+.patientForm {
   padding: 1em;
   display: inline-block;
   position: relative;
   text-align: center;
 }
 
-.addPatientLabel {
+.patientLabel {
   font-size: 1em;
 }
 
@@ -125,7 +125,7 @@ html, body {
   width: 20em;
 }
 
-#gender, #race {
+#birthSex, #race {
   width: 9em;
 }
 
@@ -146,7 +146,7 @@ html, body {
   width: 20em;
 }
 
-.addPatientButton {
+.patientButton {
   display: block;
   position: relative;
   text-align: center;

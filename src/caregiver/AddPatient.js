@@ -104,26 +104,27 @@ const AddPatient = (props) => {
 
     return (
         <div>
-            <Container className="addPatientContainer">
-                <Form className="addPatientForm my-auto">
+            <Container className="patientContainer">
+                <Form className="patientForm my-auto">
                     <Row className="center">
                         <Input id="name" value={name} onChange={e => setName(e.target.value)} />
-                        <Label htmlFor="name" className="addPatientLabel">Patient Name</Label>
+                        <Label htmlFor="name" className="patientLabel">Patient Name</Label>
                     </Row>
                     <br />
                     <Row className="center">
                         <Input id="preferredName" value={preferredName} onChange={e => setPreferredName(e.target.value)} />
-                        <Label htmlFor="preferredName" className="addPatientLabel">Preferred Name</Label>
+                        <Label htmlFor="preferredName" className="patientLabel">Preferred Name</Label>
                     </Row>
                     <br />
                     <Row className="center">
                         <Input id="location" value={location} onChange={e => setLocation(e.target.value)} />
-                        <Label htmlFor="location" className="addPatientLabel">Location</Label>
+                        <Label htmlFor="location" className="patientLabel">Location</Label>
                     </Row>
                     <br />
                     <Row className="genderRace">
                         <Col>
-                            <Input type="select" id="gender" value={birthSex} onChange={(e) => setBirthSex(e.target.value)}>
+                            <Input type="select" id="birthSex" value={birthSex} onChange={(e) => setBirthSex(e.target.value)}>
+                                <option value=""></option>
                                 <option value="Male">Male</option>
                                 <option value="Female">Female</option>
                                 <option value="Unknown">Unknown</option>
@@ -132,6 +133,7 @@ const AddPatient = (props) => {
                         </Col>
                         <Col>
                             <Input type="select" id="race" value={race} onChange={(e) => setRace(e.target.value)}>
+                                <option value=""></option>
                                 <option value="American Indian or Alaska Native">American Indian or Alaska Native</option>
                                 <option value="Asian">Asian</option>
                                 <option value="Black or African American">Black or African American</option>
@@ -147,25 +149,25 @@ const AddPatient = (props) => {
                         <Col>
                             <Input id="age" value={age} onChange={e => setAge(e.target.value)} />
                             <br />
-                            <Label htmlFor="age" className="addPatientLabel">Age</Label>
+                            <Label htmlFor="age" className="patientLabel">Age</Label>
                         </Col>
                         <Col className="my-auto">
                             <Input id="medication" type="checkbox" checked={medication} onChange={() => setMedication(!medication)} />
-                            <Label htmlFor="medication" className="addPatientLabel">Medication?</Label>
+                            <Label htmlFor="medication" className="patientLabel">Medication?</Label>
                         </Col>
                     </Row>
                     <br />
                     <Row className="center">
                         <DatePicker className="datePicker" id="careStart" selected={startDate} onChange={handleChange} />
                         <br />
-                        <Label htmlFor="careStart" className="addPatientLabel">Care Start Date</Label>
+                        <Label htmlFor="careStart" className="patientLabel">Care Start Date</Label>
                     </Row>
                     <br />
                     <Row className="center">
                         <Input type="textarea" id="caregiverNotes" value={caregiverNotes} onChange={e => setCaregiverNotes(e.target.value)} />
-                        <Label htmlFor="caregiverNotes" className="addPatientLabel">Caregiver Notes</Label>
+                        <Label htmlFor="caregiverNotes" className="PatientLabel">Caregiver Notes</Label>
                     </Row>
-                    <Row className="addPatientButton">
+                    <Row className="patientButton">
                         <Button type="submit" onClick={handleSubmit}>Add New Patient</Button>
                     </Row>
                 </Form>
