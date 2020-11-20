@@ -24,7 +24,7 @@ const IndividualPatient = (props) => {
                 </div>
                 <ListGroup className="list-group list-group-flush">
                     <ListGroupItem className="list-group-item">Age: {props.p.age}</ListGroupItem>
-                    <ListGroupItem className="list-group-item">Gender: {props.p.gender}</ListGroupItem>
+                    <ListGroupItem className="list-group-item">Birth Sex: {props.p.birthSex}</ListGroupItem>
                     <ListGroupItem className="list-group-item">Race: {props.p.race}</ListGroupItem>
                     <ListGroupItem className="list-group-item">Location: {props.p.location}</ListGroupItem>
                     <ListGroupItem className="list-group-item">{props.p.medication ? "Patient Needs Assistance With Medication" : "Patient Does Not Need Assistance With Medication"}</ListGroupItem>

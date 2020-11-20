@@ -8,7 +8,7 @@ const AddPatient = (props) => {
     const [name, setName] = useState('')
     const [preferredName, setPreferredName] = useState('')
     const [age, setAge] = useState('')
-    const [gender, setGender] = useState('')
+    const [birthSex, setBirthSex] = useState('')
     const [race, setRace] = useState('')
     const [location, setLocation] = useState('')
     const [medication, setMedication] = useState(false)
@@ -74,7 +74,7 @@ const AddPatient = (props) => {
                     name: name,
                     preferredName: preferredName,
                     age: age,
-                    gender: gender,
+                    birthSex: birthSex,
                     race: race,
                     location: location,
                     medication: medication,
@@ -92,7 +92,7 @@ const AddPatient = (props) => {
                 setName('');
                 setPreferredName('');
                 setAge('');
-                setGender('');
+                setBirthSex('');
                 setRace('');
                 setLocation('');
                 setMedication(false);
@@ -123,12 +123,23 @@ const AddPatient = (props) => {
                     <br />
                     <Row className="genderRace">
                         <Col>
-                            <Input id="gender" value={gender} onChange={e => setGender(e.target.value)} />
-                            <Label htmlFor="gender" className="addPatientLabel">Gender</Label>
+                            <Input type="select" id="gender" value={birthSex} onChange={(e) => setBirthSex(e.target.value)}>
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                                <option value="Unknown">Unknown</option>
+                                <option value="Indeterminate">Indeterminate</option>
+                            </Input>
                         </Col>
                         <Col>
-                            <Input id="race" value={race} onChange={e => setRace(e.target.value)} />
-                            <Label htmlFor="race" className="addPatientLabel">Race</Label>
+                            <Input type="select" id="race" value={race} onChange={(e) => setRace(e.target.value)}>
+                                <option value="American Indian or Alaska Native">American Indian or Alaska Native</option>
+                                <option value="Asian">Asian</option>
+                                <option value="Black or African American">Black or African American</option>
+                                <option value="Native Hawaiian or Other Pacific Islander">Native Hawaiian or Other Pacific Islander</option>
+                                <option value="White">White</option>
+                                <option value="Other">Other</option>
+                                <option value="Unknown">Unknown</option>
+                            </Input>
                         </Col>
                     </Row>
                     <br />
@@ -166,6 +177,4 @@ const AddPatient = (props) => {
 }
 
 export default AddPatient;
-
-// How to set "Gender" and "Race" to drop down menu?
 
