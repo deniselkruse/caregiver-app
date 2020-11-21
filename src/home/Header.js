@@ -13,15 +13,22 @@ const Header = (props) => {
             <Navbar color="faded" light>
                 <NavbarBrand href="/" className="mr-auto">
                     <i className="fas fa-house-user" id="houseLogo" color="#f58b44"></i>
-                </NavbarBrand>
+               
+                <h3 id="careSpace">CompanionPath</h3></NavbarBrand>
                 <NavbarToggler onClick={toggleNavbar} className="mr-2" id="hamburger" />
                 <Collapse isOpen={!collapsed} navbar>
                     <Nav navbar>
                         <NavItem>
-                            <NavLink href="/">Example 1</NavLink>
+                            <NavLink href="/">Home</NavLink>
                         </NavItem>
                         <NavItem>
-                            <NavLink href="/">Example 2</NavLink>
+                            <NavLink href="/about">About</NavLink>
+                        </NavItem>
+                        <NavItem>
+                            <NavLink href="/mine">View All</NavLink>
+                        </NavItem>
+                        <NavItem>
+                            <NavLink href="/patient/create">Add Patient</NavLink>
                         </NavItem>
                         <NavItem>
                             <Button onClick={props.clickLogout}>Logout</Button>
@@ -34,6 +41,11 @@ const Header = (props) => {
 }
 
 export default Header;
+
+// NavbarToggler.propTypes = {
+//     type: PropTypes.string,
+//     tag: PropTypes.oneOfType([PropTypes.func, PropTypes.string])
+// }
 
 // NavbarToggler.propTypes = {
 //     type: PropTypes.string,

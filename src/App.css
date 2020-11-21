@@ -4,20 +4,32 @@
 
 html, body {
 height: 100%;
+font-family: 'Roboto', sans-serif;
 }
 
 /* NAVBAR */
 
 .homeLogo {
-color: #f47d31;
+color: #f58b44;
 }
 
 #houseLogo {
 font-size: 2.2em;
 }
 
+#careSpace {
+display: inline-block;
+position: relative;
+text-align: center;
+margin-right: .6em;
+margin-top: .2em;
+font-family: 'Roboto', sans-serif;
+font-weight: 500;
+color: #828dab;
+}
+
 #hamburger {
-color: #f47d31;
+color: #f58b44;
 }
 
 /* BANNER */
@@ -71,18 +83,38 @@ margin-top: 3em;
 
 #viewAll, #findPatient, #addPatient {
 font-size: 5em;
-color: #f47d31;
+color: #f58b44;
 }
 
-/* PATIENT CARDS */
+.menuText {
+text-align: center;
+margin-top: .8em;
+}
 
-.addPatientContainer{
+/* FIND PATIENT */
+
+.patientSearch {
 display: inline-block;
 position: relative;
 text-align: center;
 }
 
-.addPatientForm{
+.search {
+display: inline-block;
+position: relative;
+text-align: center;
+width: 8em;
+}
+
+/* PATIENT CARDS */
+
+.patientContainer {
+display: inline-block;
+position: relative;
+text-align: center;
+}
+
+.patientForm{
 display: inline-block;
 position: relative;
 align-content: center;
@@ -98,14 +130,14 @@ padding: 1em;
 
 /* ADD PATIENT */
 
-.addPatientForm {
+.patientForm {
 padding: 1em;
 display: inline-block;
 position: relative;
 text-align: center;
 }
 
-.addPatientLabel {
+.patientLabel {
 font-size: 1em;
 }
 
@@ -125,7 +157,7 @@ margin-top: .5em;
 width: 20em;
 }
 
-#gender, #race {
+#birthSex, #race {
 width: 9em;
 }
 
@@ -146,8 +178,16 @@ text-align: center;
 width: 20em;
 }
 
-.addPatientButton {
+.patientButton {
 display: block;
+position: relative;
+text-align: center;
+}
+
+/* JOURNAL CREATE */
+
+.journalContainer {
+display: inline-block;
 position: relative;
 text-align: center;
 }
