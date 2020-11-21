@@ -14,6 +14,7 @@ const Header = (props) => {
                 <NavbarBrand href="/" className="mr-auto">
                     <i className="fas fa-house-user" id="houseLogo" color="#f58b44"></i>
                 </NavbarBrand>
+                <h2 id="careSpace">CompanionPath</h2>
                 <NavbarToggler onClick={toggleNavbar} className="mr-2" id="hamburger" />
                 <Collapse isOpen={!collapsed} navbar>
                     <Nav navbar>

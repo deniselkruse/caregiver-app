@@ -9,7 +9,7 @@ const EditPatient = (props) => {
     const [editName, setEditName] = useState(props.patientToUpdate.name)
     const [editPreferredName, setEditPreferredName] = useState(props.patientToUpdate.preferredName)
     const [editAge, setEditAge] = useState(props.patientToUpdate.age)
-    const [editBirthSex, setEditBirthSex] = useState(props.patientToUpdate.gender)
+    const [editBirthSex, setEditBirthSex] = useState(props.patientToUpdate.birthSex)
     const [editRace, setEditRace] = useState(props.patientToUpdate.race)
     const [editLocation, setEditLocation] = useState(props.patientToUpdate.location)
     const [editMedication, setEditMedication] = useState(props.patientToUpdate.medication)

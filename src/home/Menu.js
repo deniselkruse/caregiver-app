@@ -13,19 +13,21 @@ const Menu = (props) => {
                         <i className="fas fa-users" id="viewAll"></i>
                     </Row>
                 </Link>
-                <h5>View All</h5>
-                <Link to="/:name">
+                <h5 className="menuText">View All</h5>
+
+                {/* <Link to="/:name">
                     <Row className="patientIcons">
                         <i className="fas fa-search" id="findPatient"></i>
                     </Row>
                 </Link>
-                <h5>Find Patient</h5>
+                <h5 className="menuText">Find Patient</h5> */}
+
                 <Link to="/patient/create">
                     <Row className="patientIcons">
                         <i className="fas fa-user-plus" id="addPatient"></i>
                     </Row>
                 </Link>
-                <h5>Add Patient</h5>
+                <h5 className="menuText">Add Patient</h5>
             </Col>
         </div>
     )
