@@ -21,8 +21,8 @@ html, body {
   display: inline-block;
   position: relative;
   text-align: center;
-  margin-right: .6em;
   margin-top: .2em;
+  margin-left: .2em;
   font-family: 'Roboto', sans-serif;
   font-weight: 500;
   color: #828dab;
@@ -121,11 +121,32 @@ html, body {
 }
 
 .patientCard {
-  width: 25em;
+  width: 24em;
   display: block;
   position: relative;
   margin-top: 1.5em;
   padding: 1em;
+}
+
+.patientButtons {
+  display: inline-block;
+  position: relative;
+  text-align: center;
+}
+
+.updateButton {
+  width: 9em;
+  color: white;
+  font-weight: 500;
+  font-style: bold;
+}
+
+.deleteButton {
+  width: 8em;
+  color: white;
+  font-weight: 500;
+  font-style: bold;
+  margin-left: .5em;
 }
 
 /* ADD PATIENT */

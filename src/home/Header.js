@@ -13,8 +13,8 @@ const Header = (props) => {
             <Navbar color="faded" light>
                 <NavbarBrand href="/" className="mr-auto">
                     <i className="fas fa-house-user" id="houseLogo" color="#f58b44"></i>
+                    <h3 id="careSpace">CompanionPath</h3>
                 </NavbarBrand>
-                <h2 id="careSpace">CompanionPath</h2>
                 <NavbarToggler onClick={toggleNavbar} className="mr-2" id="hamburger" />
                 <Collapse isOpen={!collapsed} navbar>
                     <Nav navbar>
