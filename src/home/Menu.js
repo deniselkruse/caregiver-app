@@ -29,6 +29,16 @@ const Menu = (props) => {
                 </Link>
                 <h5 className="menuText">Add Patient</h5>
             </Col>
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
         </div>
     )
 }

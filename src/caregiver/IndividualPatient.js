@@ -1,16 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Button, Container, Col, ListGroup, ListGroupItem } from 'reactstrap';
+
+import RemovePatient from './RemovePatient';
 
 const IndividualPatient = (props) => {
 
-    const RemovePatient = () => {
-        fetch(`http://localhost:3000/patient/${props.p.id}`, {
-            method: 'DELETE',
-            headers: new Headers({
-                'Content-Type': 'application/json',
-                'Authorization': props.sessionToken
-            })
-        }).then(console.log('patient successfully deleted'))
+    const [removeOn, setRemoveOn] = useState(false)
+    const [showModal, setShowModal] = useState(true)
+
+    const DeletePatient = (e) => {
+        setRemoveOn(true)
+        setShowModal(true)
     }
 
     return (
@@ -33,9 +33,11 @@ const IndividualPatient = (props) => {
                 </ListGroup>
                 <Col className="patientButtons">
                     <Button color="warning" className="updateButton" onClick={() => { props.editUpdatePatient(props.p); props.updateOn() }}>Update Patient</Button>
-                    <Button color="danger" className="deleteButton" type="submit" value="refresh" onClick={() => { RemovePatient(props.p) }}>Delete Patient</Button>
+
+                    <Button color="danger" className="deleteButton" type="submit" value="refresh" onClick={(e) => { DeletePatient() }}>Delete Patient</Button>
                 </Col>
             </div>
+            {removeOn ? <RemovePatient sessionToken={props.sessionToken} p={props.patients} showModal={showModal} setShowModal={setShowModal} fetchPatients={props.fetchPatients} /> : <></>}
         </Container>
     )
 

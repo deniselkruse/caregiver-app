@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { Button, Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink } from 'reactstrap';
 
 
-
 const Header = (props) => {
     const [collapsed, setCollapsed] = useState(true);
 
@@ -22,6 +21,9 @@ const Header = (props) => {
                             <NavLink href="/">Home</NavLink>
                         </NavItem>
                         <NavItem>
+                            <NavLink href="/about">About</NavLink>
+                        </NavItem>
+                        <NavItem>
                             <NavLink href="/mine">View All</NavLink>
                         </NavItem>
                         <NavItem>
@@ -38,8 +40,3 @@ const Header = (props) => {
 }
 
 export default Header;
-
-// NavbarToggler.propTypes = {
-//     type: PropTypes.string,
-//     tag: PropTypes.oneOfType([PropTypes.func, PropTypes.string])
-// }

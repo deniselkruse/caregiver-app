@@ -6,6 +6,7 @@ import {BrowserRouter as Router} from 'react-router-dom';
 import Banner from './home/Banner';
 import Header from './home/Header';
 import HomePage from './home/HomePage';
+import Footer from './home/Footer';
 
 import Auth from './auth/Auth';
 
@@ -39,6 +40,7 @@ function App() {
       <Header clickLogout={clearToken}/>
       <Banner />
       {protectedViews()}
+      <Footer />
     </div>
   );
 }

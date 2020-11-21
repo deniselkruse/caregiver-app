@@ -42,12 +42,38 @@ html, body {
   max-width: 100;
 }
 
-.banner a {
+/* FOOTER */
+
+.footerDiv {
+  font-weight: 500;
+}
+
+.footer {
+  margin-top: 0.1em!important;
+  background-color: #5a6175;
+  max-width: 100;
   color: white;
 }
 
-.banner  p {
-  margin-top: 0.2em!important;
+.footerRow {
+  display: block;
+  position: relative;
+  text-align: center;
+}
+
+.footerLink {
+  color: white;
+  text-decoration: none;
+  margin-left: 1em;
+  margin-right: 1em;
+}
+
+.footerLink:hover {
+  text-decoration: none;
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
+  transition: 1s ease;
 }
 
 /* AUTH */
@@ -179,7 +205,7 @@ html, body {
 }
 
 #birthSex, #race {
-  width: 9em;
+  width: 8em;
 }
 
 #age {
