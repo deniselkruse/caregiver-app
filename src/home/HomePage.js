@@ -6,10 +6,6 @@ import AddPatient from '../caregiver/AddPatient';
 import Menu from '../home/Menu';
 import About from '../home/About';
 
-<<<<<<< HEAD
-
-=======
->>>>>>> fa09b844ec10c241d4dc2a11f731dbc36b3ccf82
 const HomePage = (props) => {
 
     const [patients, setPatients] = useState([])
@@ -33,14 +29,9 @@ const HomePage = (props) => {
         <div>
             <div>
                 <Switch>
-<<<<<<< HEAD
-                    <Route exact path="/mine"><PatientList patients={patients}  sessionToken={props.sessionToken} /></Route>
-                    <Route exact path="/about"><About /></Route>
-=======
                     <Route exact path="/about"><About /></Route>
                     <Route exact path="/mine"><PatientList patients={patients} sessionToken={props.sessionToken} fetchPatients={fetchPatients} /></Route>
                     <Route exact path="/:name"></Route>
->>>>>>> fa09b844ec10c241d4dc2a11f731dbc36b3ccf82
                     <Route exact path="/patient/create"><AddPatient sessionToken={props.sessionToken} fetchPatients={fetchPatients} /></Route>
                     <Route exact path="/"><Menu /></Route>
                 </Switch>
