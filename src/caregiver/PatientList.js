@@ -81,6 +81,7 @@ const PatientList = (props) => {
                     </Col>
                 </Row>
             </FormGroup>
+            
             {patients.map((patients, i) =>
                 <IndividualPatient p={patients} key={i} patients={patients} editUpdatePatient={editUpdatePatient} updateOn={updateOn} fetchPatients={fetchPatients} sessionToken={props.sessionToken} />)}
 

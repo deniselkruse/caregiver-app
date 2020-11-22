@@ -65,7 +65,7 @@ const NewJournal = (props) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        fetch('http://localhost:3000/journal/create', {
+        fetch('http://localhost:3000/journal/create/:name', {
             method: 'POST',
             body: JSON.stringify({
                 journal: {
@@ -88,10 +88,10 @@ const NewJournal = (props) => {
                 setJournalDate('');
                 setMedicationTime('');
                 setMood('');
-                setAwake('');
+                setAwake(''); 
                 setAsleep('');
                 setDailyNotes('');
-                props.fetchJournal();
+                props.fetchJournals();
                 // props.fetchPatients(); // ??? To connect Journal to Individual Patient ID?
             })
     }
@@ -100,6 +100,7 @@ const NewJournal = (props) => {
             <Form className="my-auto">
                 {/* PATIENT NAME: Need to figure out how to auto-populate this via Owner.Id -> Patient.Id */}
                 <Row className="center">
+                    <h2>Patient: {props.p.name}</h2>
                     <Input id="name" value={patient} onChange={e => setPatient(e.target.value)} />
                     <Label htmlFor="name" className="patientLabel">Patient Name</Label>
                 </Row>
