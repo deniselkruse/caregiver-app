@@ -5,8 +5,8 @@ switch (window.location.hostname) {
     case '127.0.0.1':
         APIURL = 'http://localhost:3000'
         break
-    case 'http://companionpathapp.herokuapp.com':
-        APIURL = 'https://companionpath.herokuapp.com'
+    default:
+        APIURL = 'https://companionpathserver.herokuapp.com'
 }
 
 export default APIURL;
