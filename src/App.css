@@ -11,18 +11,24 @@ font-family: 'Roboto', sans-serif;
 
 .homeLogo {
 color: #f58b44;
+
 }
 
 #houseLogo {
 font-size: 2.2em;
+transition: 2s;
+}
+
+#houseLogo:hover {
+  color: navy;
 }
 
 #careSpace {
 display: inline-block;
 position: relative;
 text-align: center;
-margin-right: .6em;
 margin-top: .2em;
+margin-left: .2em;
 font-family: 'Roboto', sans-serif;
 font-weight: 500;
 color: #828dab;
@@ -42,12 +48,39 @@ color: white;
 max-width: 100;
 }
 
-.banner a {
+/* FOOTER */
+
+.footerDiv {
+font-weight: 500;
+}
+
+.footer {
+margin-top: 0.1em!important;
+background-color: #5a6175;
+max-width: 100;
 color: white;
 }
 
-.banner  p {
-margin-top: 0.2em!important;
+.footerRow {
+display: block;
+position: relative;
+text-align: center;
+}
+
+.footerLink {
+color: white;
+text-decoration: none;
+margin-left: 1em;
+margin-right: 1em;
+}
+
+.footerLink:hover {
+text-decoration: none;
+-webkit-transform: scale(1.1);
+-ms-transform: scale(1.1);
+transform: scale(1.1);
+transition: 1s ease;
+color: #f58b44;
 }
 
 /* AUTH */
@@ -79,16 +112,24 @@ display: block;
 position: relative;
 text-align: center;
 margin-top: 3em;
+
 }
 
 #viewAll, #findPatient, #addPatient {
 font-size: 5em;
 color: #f58b44;
+
+}
+
+#viewAll:hover, #findPatient:hover, #addPatient:hover {
+  color: navy;
+  transition: 2s ease;
 }
 
 .menuText {
 text-align: center;
 margin-top: .8em;
+color: rgb(90,97,117);
 }
 
 /* FIND PATIENT */
@@ -121,11 +162,32 @@ align-content: center;
 }
 
 .patientCard {
-width: 25em;
+width: 24em;
 display: block;
 position: relative;
 margin-top: 1.5em;
 padding: 1em;
+}
+
+.patientButtons {
+display: inline-block;
+position: relative;
+text-align: center;
+}
+
+.updateButton {
+width: 9em;
+color: white;
+font-weight: 500;
+font-style: bold;
+}
+
+.deleteButton {
+width: 8em;
+color: white;
+font-weight: 500;
+font-style: bold;
+margin-left: .5em;
 }
 
 /* ADD PATIENT */
@@ -158,7 +220,7 @@ width: 20em;
 }
 
 #birthSex, #race {
-width: 9em;
+width: 8em;
 }
 
 #age {
