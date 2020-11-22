@@ -1,38 +1,154 @@
 .App {
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+html, body {
+height: 100%;
+font-family: 'Roboto', sans-serif;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* NAVBAR */
+.homeLogo {
+color: #F58B44;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+#houseLogo {
+font-size: 2.2em;
 }
-
-.App-link {
-  color: #61dafb;
+#careSpace {
+display: inline-block;
+position: relative;
+text-align: center;
+margin-right: .6em;
+margin-top: .2em;
+font-family: 'Roboto', sans-serif;
+font-weight: 500;
+color: #828DAB;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#hamburger {
+color: #F58B44;
+}
+/* BANNER */
+.banner {
+margin-top: 0.1em!important;
+text-align: center;
+background-color: #7BCDC8; 
+color: white;
+max-width: 100;
+}
+.banner a {
+color: white;
+}
+.banner  p {
+margin-top: 0.2em!important;
+}
+/* AUTH */
+.login, .register{
+display: inline-block;
+position: relative;
+text-align: center;
+}
+/* .loginHeader, .registerHeader {
+display: inline-block;
+position: absolute;
+text-align: center;
+} */
+.email {
+width: 20em;
+}
+.password {
+width: 20em;
+}
+/* MENU PAGE */
+.patientIcons {
+display: block;
+position: relative;
+text-align: center;
+margin-top: 3em;
+}
+#viewAll, #findPatient, #addPatient {
+font-size: 5em;
+color: #F58B44;
+}
+.menuText {
+text-align: center;
+margin-top: .8em;
+}
+/* FIND PATIENT */
+.patientSearch {
+display: inline-block;
+position: relative;
+text-align: center;
+}
+.search {
+display: inline-block;
+position: relative;
+text-align: center;
+width: 8em;
+}
+/* PATIENT CARDS */
+.patientContainer {
+display: inline-block;
+position: relative;
+text-align: center;
+}
+.patientForm{
+display: inline-block;
+position: relative;
+align-content: center;
+}
+.patientCard {
+width: 25em;
+display: block;
+position: relative;
+margin-top: 1.5em;
+padding: 1em;
+}
+/* ADD PATIENT */
+.patientForm {
+padding: 1em;
+display: inline-block;
+position: relative;
+text-align: center;
+}
+.patientLabel {
+font-size: 1em;
+}
+.center {
+display: inline-block;
+position: relative;
+text-align: center;
+margin-top: .5em;
+margin-bottom: .5em;
+}
+.genderRace, .ageMed {
+margin-top: .5em;
+}
+#name, #preferredName, #location {
+width: 20em;
+}
+#birthSex, #race {
+width: 9em;
+}
+#age {
+width: 5em;
+display: inline-block;
+position: relative;
+text-align: center;
+}
+.medication {
+display: block;
+position: relative;
+text-align: center;
+}
+#caregiverNotes {
+width: 20em;
+}
+.patientButton {
+display: block;
+position: relative;
+text-align: center;
+}
+/* JOURNAL CREATE */
+.journalContainer {
+display: inline-block;
+position: relative;
+text-align: center;
 }
