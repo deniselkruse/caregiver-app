@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Button, Container, Form, Label, Input, Col, Row } from 'reactstrap';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import APIURL from '../helpers/env'
 
 const NewJournal = (props) => {
 
@@ -65,7 +66,7 @@ const NewJournal = (props) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        fetch('http://localhost:3000/journal/create', {
+        fetch(`${APIURL}/journal/create`, {
             method: 'POST',
             body: JSON.stringify({
                 journal: {

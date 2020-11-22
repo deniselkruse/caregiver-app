@@ -3,6 +3,7 @@ import { Button, Col, Form, FormGroup, Input, Label, Row } from 'reactstrap';
 
 import IndividualPatient from './IndividualPatient';
 import EditPatient from './EditPatient';
+import APIURL from '../helpers/env'
 
 const PatientList = (props) => {
 
@@ -12,7 +13,7 @@ const PatientList = (props) => {
     const [search, setSearch] = useState('');
 
     const fetchPatients = () => {
-        fetch('http://localhost:3000/patient', {
+        fetch(`${APIURL}/patient`, {
             method: 'GET',
             headers: new Headers({
                 'Content-Type': 'application/json',
@@ -26,7 +27,7 @@ const PatientList = (props) => {
     }
 
     const fetchResults = (e) => {
-        fetch(`http://localhost:3000/patient/${search}`, {
+        fetch(`${APIURL}/patient/${search}`, {
             method: 'GET',
             headers: new Headers({
                 'Content-Type':

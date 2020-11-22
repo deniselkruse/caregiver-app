@@ -1,11 +1,12 @@
 
 import React, { } from 'react'
 import { Button, Modal, ModalBody, ModalHeader } from 'reactstrap'
+import APIURL from '../helpers/env'
 
 const RemovePatient = (props) => {
 
     const DeletePatient = (e) => {
-        fetch(`http://localhost:3000/patient/${props.p.id}`, {
+        fetch(`${APIURL}/patient/${props.p.id}`, {
             method: 'DELETE',
             headers: new Headers({
                 'Content-Type': 'application/json',

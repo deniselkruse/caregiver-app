@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Button, Container, Form, Label, Input, Col, Row } from 'reactstrap';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import APIURL from '../helpers/env'
 
 
 
@@ -71,7 +72,7 @@ const AddPatient = (props) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        fetch('http://localhost:3000/patient/create', {
+        fetch(`${APIURL}/patient/create`, {
             method: 'POST',
             body: JSON.stringify({
                 patient: {

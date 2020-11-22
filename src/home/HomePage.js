@@ -5,6 +5,7 @@ import PatientList from '../caregiver/PatientList'
 import AddPatient from '../caregiver/AddPatient';
 import Menu from '../home/Menu';
 import About from '../home/About';
+import APIURL from '../helpers/env'
 
 const HomePage = (props) => {
 
@@ -17,7 +18,7 @@ const HomePage = (props) => {
     )
 
     const fetchPatients = () => {
-        fetch('http://localhost:3000/patient', {
+        fetch(`${APIURL}/patient`, {
             method: 'GET'
         })
             .then(response => response.json())
