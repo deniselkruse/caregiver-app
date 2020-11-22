@@ -1,23 +1,46 @@
-import logo from './logo.svg';
+import React, { useState, useEffect } from 'react';
+import 'bootstrap/dist/css/bootstrap.css';
 import './App.css';
+import {BrowserRouter as Router} from 'react-router-dom';
+
+import Banner from './home/Banner';
+import Header from './home/Header';
+import HomePage from './home/HomePage';
+import Footer from './home/Footer';
+
+import Auth from './auth/Auth';
 
 function App() {
+  const [sessionToken, setSessionToken] = useState('');
+
+  useEffect(() => {
+    if (localStorage.getItem('token')) {
+      setSessionToken(localStorage.getItem('token'));
+    }
+  }, [])
+
+  const updateToken = (newToken) => {
+    localStorage.setItem('token', newToken);
+    setSessionToken(newToken);
+    console.log(sessionToken);
+  };
+
+  const clearToken = () => {
+    localStorage.clear();
+    setSessionToken('');
+  }
+
+  const protectedViews = () => {
+    return (sessionToken === localStorage.getItem('token') ? <Router><HomePage sessionToken={sessionToken} /></Router>
+      : <Auth updateToken={updateToken} />)
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Header clickLogout={clearToken}/>
+      <Banner />
+      {protectedViews()}
+      <Footer />
     </div>
   );
 }
