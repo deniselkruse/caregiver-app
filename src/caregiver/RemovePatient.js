@@ -1,6 +1,5 @@
-  
-import React, {}  from 'react'
 
+import React, { } from 'react'
 import { Button, Modal, ModalBody, ModalHeader } from 'reactstrap'
 
 const RemovePatient = (props) => {
@@ -16,7 +15,6 @@ const RemovePatient = (props) => {
         props.setShowModal(false)
         props.fetchPatients();
     }
-
     return (
         <div>
             <Modal isOpen={props.showModal} className="patientContainer">
@@ -24,13 +22,10 @@ const RemovePatient = (props) => {
                     <ModalHeader>Are you sure you want to delete {props.p.name}?</ModalHeader>
                     <br />
                     <Button color="danger" type="submit" value="refresh" onClick={(e) => { DeletePatient(props.p) }}>Delete</Button>
-                    <Button color="danger" type="submit" value="refresh" onClick={(e) => { props.setShowModal(false)}}>Cancel</Button>
+                    <Button color="danger" type="submit" value="refresh" onClick={(e) => { props.setShowModal(false) }}>Cancel</Button>
                 </ModalBody>
-        
             </Modal>
-
         </div>
     )
 }
-
 export default RemovePatient;

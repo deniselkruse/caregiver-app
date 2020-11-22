@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Button, Container, ListGroup, ListGroupItem } from 'reactstrap';
+import { Button, Container, Col, ListGroup, ListGroupItem } from 'reactstrap';
+
 import RemovePatient from './RemovePatient';
 
 const IndividualPatient = (props) => {
@@ -7,9 +8,7 @@ const IndividualPatient = (props) => {
     const [removeOn, setRemoveOn] = useState(false)
     const [showModal, setShowModal] = useState(true)
 
-
     const DeletePatient = (e) => {
-        
         setRemoveOn(true)
         setShowModal(true)
     }
@@ -18,7 +17,7 @@ const IndividualPatient = (props) => {
         <Container className="patientCard">
             <div className="card">
                 <div className="card-header">
-                    <h3>Patient Name: {props.p.name}</h3>
+                    <h4>Patient Name: {props.p.name}</h4>
                 </div>
                 <div className="card-header">
                     <h5>Preferred Name: {props.p.preferredName}</h5>
@@ -32,19 +31,16 @@ const IndividualPatient = (props) => {
                     <ListGroupItem className="list-group-item">Care Start Date: {props.p.careStart}</ListGroupItem>
                     <ListGroupItem className="list-group-item">Caregiver Notes: {props.p.caregiverNotes}</ListGroupItem>
                 </ListGroup>
-                <Button color="warning" onClick={() => { props.editUpdatePatient(props.p); props.updateOn() }}>Update</Button>
-                <Button color="danger" type="submit" value="refresh" onClick={(e) => { DeletePatient() }}>Delete</Button>
+                <Col className="patientButtons">
+                    <Button color="warning" className="updateButton" onClick={() => { props.editUpdatePatient(props.p); props.updateOn() }}>Update Patient</Button>
+
+                    <Button color="danger" className="deleteButton" type="submit" value="refresh" onClick={(e) => { DeletePatient() }}>Delete Patient</Button>
+                </Col>
             </div>
-
-            {removeOn ? <RemovePatient sessionToken={props.sessionToken} p={props.patients} showModal={showModal} setShowModal={setShowModal} fetchPatients={props.fetchPatients}/> : <></>}
+            {removeOn ? <RemovePatient sessionToken={props.sessionToken} p={props.patients} showModal={showModal} setShowModal={setShowModal} fetchPatients={props.fetchPatients} /> : <></>}
         </Container>
-
-        
     )
 
 }
 
 export default IndividualPatient;
-
-// Create Remove Patient compionenet on button click => have modul in Remove component
-

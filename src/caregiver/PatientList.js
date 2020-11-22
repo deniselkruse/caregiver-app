@@ -1,8 +1,8 @@
-import React, {useEffect, useState} from 'react';
-import {Form, Button} from 'reactstrap'
+import React, { useEffect, useState } from 'react';
+import { Button, Col, Form, FormGroup, Input, Label, Row } from 'reactstrap';
+
 import IndividualPatient from './IndividualPatient';
 import EditPatient from './EditPatient';
-import RemovePatient from './RemovePatient'
 
 const PatientList = (props) => {
 
@@ -26,25 +26,25 @@ const PatientList = (props) => {
     }
 
     const fetchResults = (e) => {
-       
         fetch(`http://localhost:3000/patient/${search}`, {
             method: 'GET',
             headers: new Headers({
                 'Content-Type':
-                'application/json',
+                    'application/json',
                 'Authorization': props.sessionToken
-            })})
+            })
+        })
             .then(response => response.json())
             .then((data) => {
                 (console.log(data))
-                setPatients(data)
+                setPatients(data);
             })
-        }
+    }
 
-        const handleSubmit = (event) => {
-            event.preventDefault();
-            fetchResults();
-        };
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        fetchResults();
+    }
 
     const editUpdatePatient = (patient) => {
         setPatientToUpdate(patient);
@@ -59,32 +59,32 @@ const PatientList = (props) => {
         setUpdateActive(false);
     }
 
-
     useEffect(() => {
         fetchPatients();
-    },[])
+    }, [])
 
     return (
-
-        <div className = "main">
-            <div className="mainDiv">
-                <div className="patientSearch">
-                <Form onSubmit={(e) => handleSubmit(e)}>
-                    <span>Enter patients first name to search</span>
-                    <input type="text" name="search" onChange={(e) => setSearch(e.target.value)} required />
-                    <br />
-                    <br />
-                    <Button className="submit" type="submit">Submit search</Button>
-                </Form>
-                </div>
+        <div>
+            <FormGroup>
+                <Row>
+                    <Col className="patientSearch">
+                        <Form onSubmit={(e) => handleSubmit(e)}>
+                            <br />
+                            <Label>Enter patient's first name to search:</Label>
+                            <br />
+                            <Input type="text" className="search" onChange={(e) => setSearch(e.target.value)} required />
+                            <br />
+                            <br />
+                            <Button className="submit" id="searchButton">Search</Button>
+                        </Form>
+                    </Col>
+                </Row>
+            </FormGroup>
             {patients.map((patients, i) =>
                 <IndividualPatient p={patients} key={i} patients={patients} editUpdatePatient={editUpdatePatient} updateOn={updateOn} fetchPatients={fetchPatients} sessionToken={props.sessionToken} />)}
-            
 
-                {updateActive ? <EditPatient patientToUpdate={patientToUpdate} patients={patients}
+            {updateActive ? <EditPatient patientToUpdate={patientToUpdate} patients={patients}
                 updateOff={updateOff} sessionToken={props.sessionToken} fetchPatients={fetchPatients} /> : <></>}
-
-            </div>
         </div>
     )
 }

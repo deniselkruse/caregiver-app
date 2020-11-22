@@ -2,7 +2,12 @@ import React, { useState } from 'react';
 import { Button, Container, Form, Label, Input, Col, Row } from 'reactstrap';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+
+
+
+
 const AddPatient = (props) => {
+
     const [name, setName] = useState('')
     const [preferredName, setPreferredName] = useState('')
     const [age, setAge] = useState('')
@@ -12,8 +17,10 @@ const AddPatient = (props) => {
     const [medication, setMedication] = useState(false)
     const [careStart, setCareStart] = useState('')
     const [caregiverNotes, setCaregiverNotes] = useState('')
+
     const [startDate, setStartDate] = useState('')
     const [reqDate, setReqDate] = useState('')
+
     const handleChange = (date) => {
         let tempString = date.toString().substring(4, 7)
         let monthDate;
@@ -60,6 +67,8 @@ const AddPatient = (props) => {
         setReqDate(fullDate)
         console.log(reqDate)
     }
+
+
     const handleSubmit = (e) => {
         e.preventDefault();
         fetch('http://localhost:3000/patient/create', {
@@ -171,6 +180,6 @@ const AddPatient = (props) => {
         </div>
     )
 }
+
 export default AddPatient;
 
-// How to set "Gender" and "Race" to drop down menu?

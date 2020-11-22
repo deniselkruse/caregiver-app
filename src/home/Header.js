@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { Button, Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink } from 'reactstrap';
 
 
-
 const Header = (props) => {
     const [collapsed, setCollapsed] = useState(true);
 
@@ -10,10 +9,11 @@ const Header = (props) => {
 
     return (
         <div>
-           <Navbar color="faded" light>
+            <Navbar color="faded" light>
                 <NavbarBrand href="/" className="mr-auto">
-                    <i className="fas fa-house-user" id="houseLogo" color="#F58B44"></i>
-                <h3 id="careSpace">CompanionPath</h3></NavbarBrand>
+                    <i className="fas fa-house-user" id="houseLogo" color="#f58b44"></i>
+                    <h3 id="careSpace">CompanionPath</h3>
+                </NavbarBrand>
                 <NavbarToggler onClick={toggleNavbar} className="mr-2" id="hamburger" />
                 <Collapse isOpen={!collapsed} navbar>
                     <Nav navbar>
@@ -40,8 +40,3 @@ const Header = (props) => {
 }
 
 export default Header;
-
-// NavbarToggler.propTypes = {
-//     type: PropTypes.string,
-//     tag: PropTypes.oneOfType([PropTypes.func, PropTypes.string])
-// }

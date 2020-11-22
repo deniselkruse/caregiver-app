@@ -126,47 +126,48 @@ const EditPatient = (props) => {
                             </Col>
                             <Col>
                                 <Input type="select" id="race" value={editRace} onChange={(e) => setEditRace(e.target.value)}>
-                                <option value=""></option>
-                                <option value="American Indian or Alaska Native">American Indian or Alaska Native</option>
-                                <option value="Asian">Asian</option>
-                                <option value="Black or African American">Black or African American</option>
-                                <option value="Native Hawaiian or Other Pacific Islander">Native Hawaiian or Other Pacific Islander</option>
-                                <option value="White">White</option>
-                                <option value="Other">Other</option>
-                                <option value="Unknown">Unknown</option>
+                                    <option value=""></option>
+                                    <option value="American Indian or Alaska Native">American Indian or Alaska Native</option>
+                                    <option value="Asian">Asian</option>
+                                    <option value="Black or African American">Black or African American</option>
+                                    <option value="Native Hawaiian or Other Pacific Islander">Native Hawaiian or Other Pacific Islander</option>
+                                    <option value="White">White</option>
+                                    <option value="Other">Other</option>
+                                    <option value="Unknown">Unknown</option>
                                 </Input>
                             </Col>
                         </Row>
-                    <br />
-                    <Row className="ageMed">
-                        <Col>
-                            <Input id="age" value={editAge} onChange={(e) => setEditAge(e.target.value)} />
-                            <br />
-                            <Label htmlFor="age" className="patientLabel">Age</Label>
-                        </Col>
-                        <Col className="my-auto">
-                            <Input id="medication" type="checkbox" checked={editMedication} onChange={() => setEditMedication(!editMedication)} />
-                            <Label htmlFor="medication" className="patientLabel">Medication?</Label>
-                        </Col>
-                    </Row>
-                    <br />
-                    <Row className="center">
-                        <DatePicker className="datePicker" id="careStart" selected={editStartDate} onChange={handleChange} />
                         <br />
-                        <Label htmlFor="careStart" className="patientLabel">Care Start Date</Label>
-                    </Row>
-                    <br />
-                    <Row className="center">
-                        <Input type="textarea" id="caregiverNotes" value={editCaregiverNotes} onChange={(e) => setEditCaregiverNotes(e.target.value)} />
-                        <Label htmlFor="caregiverNotes" className="patientLabel">Caregiver Notes</Label>
-                    </Row>
-                    <Row className="patientButton">
-                        <Button type="submit" onClick={patientUpdate}>Update Patient</Button>
-                        <Button type="submit" onClick={!patientUpdate}>Cancel</Button>
-                    </Row>
+                        <Row className="ageMed">
+                            <Col>
+                                <Input id="age" value={editAge} onChange={(e) => setEditAge(e.target.value)} />
+                                <br />
+                                <Label htmlFor="age" className="patientLabel">Age</Label>
+                            </Col>
+                            <Col className="my-auto">
+                                <Input id="medication" type="checkbox" checked={editMedication} onChange={() => setEditMedication(!editMedication)} />
+                                <Label htmlFor="medication" className="patientLabel">Medication?</Label>
+                            </Col>
+                        </Row>
+                        <br />
+                        <Row className="center">
+                            <DatePicker className="datePicker" id="careStart" selected={editStartDate} onChange={handleChange} />
+                            <br />
+                            <Label htmlFor="careStart" className="patientLabel">Care Start Date</Label>
+                        </Row>
+                        <br />
+                        <Row className="center">
+                            <Input type="textarea" id="caregiverNotes" value={editCaregiverNotes} onChange={(e) => setEditCaregiverNotes(e.target.value)} />
+                            <Label htmlFor="caregiverNotes" className="patientLabel">Caregiver Notes</Label>
+                        </Row>
+                        <Row className="patientButton">
+                            <Button type="submit" onClick={!patientUpdate}>Cancel</Button>
+                            
+                            <Button type="submit" onClick={patientUpdate}>Update Patient</Button>
+                        </Row>
                     </Form>
-                <br />
-                <br />
+                    <br />
+                    <br />
                 </ModalBody>
             </Modal>
 
