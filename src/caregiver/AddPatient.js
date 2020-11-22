@@ -180,3 +180,4 @@ const AddPatient = (props) => {
 }
 
 export default AddPatient;
+

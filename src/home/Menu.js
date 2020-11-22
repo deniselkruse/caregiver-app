@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 
+=======
+>>>>>>> fa09b844ec10c241d4dc2a11f731dbc36b3ccf82
 import React from 'react';
 import { Row, Col } from 'reactstrap';
 import { Link } from 'react-router-dom';
@@ -30,6 +33,19 @@ const Menu = (props) => {
                 </Link>
                 <h5 className="menuText">Add Patient</h5>
             </Col>
+<<<<<<< HEAD
+=======
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+>>>>>>> fa09b844ec10c241d4dc2a11f731dbc36b3ccf82
         </div>
     )
 }

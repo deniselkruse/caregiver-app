@@ -7,35 +7,34 @@ height: 100%;
 font-family: 'Roboto', sans-serif;
 }
 
+html, body {
+  height: 100%;
+  font-family: 'Roboto', sans-serif;
+}
+
 /* NAVBAR */
 
 .homeLogo {
-color: #f58b44;
-
+  color: #f58b44;
 }
 
 #houseLogo {
-font-size: 2.2em;
-transition: 2s;
-}
-
-#houseLogo:hover {
-  color: navy;
+  font-size: 2.2em;
 }
 
 #careSpace {
-display: inline-block;
-position: relative;
-text-align: center;
-margin-top: .2em;
-margin-left: .2em;
-font-family: 'Roboto', sans-serif;
-font-weight: 500;
-color: #828dab;
+  display: inline-block;
+  position: relative;
+  text-align: center;
+  margin-top: .2em;
+  margin-left: .2em;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 600;
+  color: #828dab;
 }
 
 #hamburger {
-color: #f58b44;
+  color: #f58b44;
 }
 
 /* BANNER */
@@ -67,20 +66,38 @@ position: relative;
 text-align: center;
 }
 
+/* FOOTER */
+
+.footerDiv {
+  font-weight: 500;
+}
+
+.footer {
+  margin-top: 0.1em!important;
+  background-color: #5a6175;
+  max-width: 100;
+  color: white;
+}
+
+.footerRow {
+  display: block;
+  position: relative;
+  text-align: center;
+}
+
 .footerLink {
-color: white;
-text-decoration: none;
-margin-left: 1em;
-margin-right: 1em;
+  color: white;
+  text-decoration: none;
+  margin-left: 1em;
+  margin-right: 1em;
 }
 
 .footerLink:hover {
-text-decoration: none;
--webkit-transform: scale(1.1);
--ms-transform: scale(1.1);
-transform: scale(1.1);
-transition: 1s ease;
-color: #f58b44;
+  text-decoration: none;
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
+  transition: 1s ease;
 }
 
 /* AUTH */
@@ -147,109 +164,167 @@ text-align: center;
 width: 8em;
 }
 
+/* MENU PAGE */
+
+.patientIcons {
+  display: block;
+  position: relative;
+  text-align: center;
+  margin-top: 3em;
+}
+
+#viewAll, #findPatient, #addPatient {
+  font-size: 5em;
+  color: #f58b44;
+}
+
+.menuText {
+  text-align: center;
+  margin-top: .8em;
+}
+
+/* FIND PATIENT */
+
+.patientSearch {
+  display: inline-block;
+  position: relative;
+  text-align: center;
+}
+
+.search {
+  display: inline-block;
+  position: relative;
+  text-align: center;
+  width: 8em;
+}
+
 /* PATIENT CARDS */
 
 .patientContainer {
-display: inline-block;
-position: relative;
-text-align: center;
+  display: inline-block;
+  position: relative;
+  text-align: center;
 }
 
 .patientForm{
-display: inline-block;
-position: relative;
-align-content: center;
+  display: inline-block;
+  position: relative;
+  align-content: center;
 }
 
 .patientCard {
-width: 24em;
-display: block;
-position: relative;
-margin-top: 1.5em;
-padding: 1em;
+  width: 24em;
+  display: block;
+  position: relative;
+  margin-top: 1.5em;
+  padding: 1em;
 }
 
 .patientButtons {
-display: inline-block;
-position: relative;
-text-align: center;
+  display: inline-block;
+  position: relative;
+  text-align: center;
 }
 
 .updateButton {
-width: 9em;
-color: white;
-font-weight: 500;
-font-style: bold;
+  width: 9em;
+  color: white;
+  font-weight: 500;
+  font-style: bold;
 }
 
 .deleteButton {
-width: 8em;
-color: white;
-font-weight: 500;
-font-style: bold;
-margin-left: .5em;
+  width: 8em;
+  color: white;
+  font-weight: 500;
+  font-style: bold;
+  margin-left: .5em;
 }
 
 /* ADD PATIENT */
 
 .patientForm {
-padding: 1em;
-display: inline-block;
-position: relative;
-text-align: center;
+  padding: 1em;
+  display: inline-block;
+  position: relative;
+  text-align: center;
 }
 
 .patientLabel {
-font-size: 1em;
+  font-size: 1em;
 }
 
 .center {
-display: inline-block;
-position: relative;
-text-align: center;
-margin-top: .5em;
-margin-bottom: .5em;
+  display: inline-block;
+  position: relative;
+  text-align: center;
+  margin-top: .5em;
+  margin-bottom: .5em;
 }
 
 .genderRace, .ageMed {
-margin-top: .5em;
+  margin-top: .5em;
 }
 
 #name, #preferredName, #location {
-width: 20em;
+  width: 20em;
 }
 
 #birthSex, #race {
-width: 8em;
+  width: 8em;
 }
 
 #age {
-width: 5em;
-display: inline-block;
-position: relative;
-text-align: center;
+  width: 5em;
+  display: inline-block;
+  position: relative;
+  text-align: center;
 }
 
 .medication {
-display: block;
-position: relative;
-text-align: center;
+  display: block;
+  position: relative;
+  text-align: center;
 }
 
 #caregiverNotes {
-width: 20em;
+  width: 20em;
 }
 
 .patientButton {
-display: block;
-position: relative;
-text-align: center;
+  display: block;
+  position: relative;
+  text-align: center;
 }
 
 /* JOURNAL CREATE */
 
 .journalContainer {
-display: inline-block;
-position: relative;
-text-align: center;
+  display: inline-block;
+  position: relative;
+  text-align: center;
+}
+
+/* ABOUT */
+
+.aboutMain {
+  margin-top: 1em;
+  padding-left: 2em;
+  padding-right: 2em;
+  font-weight: 300;
+}
+
+.aboutHeader {
+  font-weight: 600;
+  color: #828dab;
+  text-align: center;
+}
+
+.aboutSubheader {
+  font-weight: 500;
+  color: #5a6175;
+}
+
+.aboutText {
+  text-align: justify;
 }
