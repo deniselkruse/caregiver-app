@@ -1,7 +1,10 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Button, Container, Form, Label, Input, Col, Row } from 'reactstrap';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import { useParams } from 'react-router-dom';
+
+import APIURL from '../helpers/env'
 
 const NewJournal = (props) => {
 
@@ -15,6 +18,9 @@ const NewJournal = (props) => {
 
     const [startDate, setStartDate] = useState('') // Auto populate to Today's Date??
     const [reqDate, setReqDate] = useState('') // Auto populate to Today's Date??
+
+    const params = useParams()
+    // console.log(params)
 
     const handleChange = (date) => {
         let tempString = date.toString().substring(4, 7)
@@ -65,15 +71,16 @@ const NewJournal = (props) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        fetch('http://localhost:3000/journal/create/:name', {
+        fetch(`${APIURL}/journal/create`, {
             method: 'POST',
             body: JSON.stringify({
                 journal: {
-                    patient: patient,
+                    patient: params.id,
                     journalDate: reqDate,
                     medicationTime: medicationTime,
-                    mood: mood,
+                    mood: true,
                     awake: awake,
+                    asleep: asleep,
                     dailyNotes: dailyNotes,
                 }
             }),
@@ -88,21 +95,24 @@ const NewJournal = (props) => {
                 setJournalDate('');
                 setMedicationTime('');
                 setMood('');
-                setAwake(''); 
+                setAwake('');
                 setAsleep('');
                 setDailyNotes('');
-                props.fetchJournals();
-                // props.fetchPatients(); // ??? To connect Journal to Individual Patient ID?
             })
     }
+
+    useEffect(() => {
+        for (const p of props.patients) {
+            if (p.id == params.id) setPatient(p)
+        }
+    }, [props.patients])
+
     return (
         <Container className="journalContainer">
             <Form className="my-auto">
-                {/* PATIENT NAME: Need to figure out how to auto-populate this via Owner.Id -> Patient.Id */}
                 <Row className="center">
-                    <h2>Patient: {props.p.name}</h2>
-                    <Input id="name" value={patient} onChange={e => setPatient(e.target.value)} />
-                    <Label htmlFor="name" className="patientLabel">Patient Name</Label>
+                    <h4 className="journalHeader">New Journal Entry</h4>
+                    <h5 className="journalPatient">Patient: {patient.preferredName}</h5>
                 </Row>
                 <br />
                 <Row className="center">
@@ -124,12 +134,11 @@ const NewJournal = (props) => {
                     </Col>
                     <Col className="my-auto">
                         <Input id="asleep" value={asleep} onChange={e => setAsleep(e.target.value)} />
-                        <Label htmlFor="asleep" className="patientLabel">Asleep Time</Label>
+                        <Label htmlFor="asleep" className="patientLabel">Bedtime</Label>
                     </Col>
                 </Row>
-                <br />
                 <Row className="center">
-                <Label htmlFor="mood" className="patientLabel">Mood</Label>
+                    <Label htmlFor="mood" className="patientLabel">Mood</Label>
                     <Input type="select" id="mood" value={mood} onChange={(e) => setMood(e.target.value)}>
                         <option value=""></option>
                         <option value="Happy">Happy</option>
@@ -149,7 +158,9 @@ const NewJournal = (props) => {
                 </Row>
                 <br />
                 <Row className="center">
-                    <Button type="submit" onClick={handleSubmit}>Add Journal Entry</Button>
+                    <Button className="newJournalButton" type="submit" onClick={handleSubmit}>Add Journal Entry</Button>
+                    <br />
+                    <br />
                 </Row>
             </Form>
         </Container>

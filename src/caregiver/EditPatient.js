@@ -4,6 +4,8 @@ import { Button, Col, Form, Label, Input, Modal, ModalHeader, ModalBody, Row } f
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
+import APIURL from '../helpers/env';
+
 const EditPatient = (props) => {
 
     const [editName, setEditName] = useState(props.patientToUpdate.name)
@@ -67,7 +69,7 @@ const EditPatient = (props) => {
 
     const patientUpdate = (e, patient) => {
         e.preventDefault();
-        fetch(`http://localhost:3000/patient/${props.patientToUpdate.name}`, {
+        fetch(`${APIURL}/${props.patientToUpdate.name}`, {
             method: 'PUT',
             body: JSON.stringify({
                 patient: {
