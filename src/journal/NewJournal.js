@@ -2,8 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { Button, Container, Form, Label, Input, Col, Row } from 'reactstrap';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import { useParams } from 'react-router-dom';
 
+import { useParams } from 'react-router-dom';
 import APIURL from '../helpers/env'
 
 const NewJournal = (props) => {

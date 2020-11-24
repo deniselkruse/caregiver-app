@@ -2,6 +2,10 @@ import React, { useState } from 'react';
 import { Button, Container, Form, Label, Input, Col, Row } from 'reactstrap';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import APIURL from '../helpers/env'
+
+
+
 
 import APIURL from '../helpers/env'
 
@@ -70,6 +74,7 @@ const AddPatient = (props) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+
         fetch(`${APIURL}/patient/create`, { //  Utilize the URL from the server-side to refer to the patient/create route.
             method: 'POST', // Match the POST method utilized in the route in the server-side
             body: JSON.stringify({
@@ -104,7 +109,6 @@ const AddPatient = (props) => {
                 props.fetchPatients(); // fetchPatients function is called to refresh the results with the newly updated data.
             })
     }
-
     return (
         <div>
             <Container className="patientContainer">

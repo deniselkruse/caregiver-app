@@ -5,6 +5,7 @@ import PatientList from '../caregiver/PatientList'
 import AddPatient from '../caregiver/AddPatient';
 import Menu from '../home/Menu';
 import About from '../home/About';
+import APIURL from '../helpers/env'
 
 import NewJournal from '../journal/NewJournal';
 import ViewJournals from '../journal/ViewJournals';
