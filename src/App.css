@@ -179,6 +179,11 @@ width: 8em;
   color: #f58b44;
 }
 
+#viewAll:hover, #findPatient:hover, #addPatient:hover {
+  color: navy;
+  transition: 2s ease;
+}
+
 .menuText {
   text-align: center;
   margin-top: .8em;
