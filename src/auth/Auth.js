@@ -4,6 +4,7 @@ import { Container, Row, Col } from 'reactstrap';
 import Register from './Register';
 import Login from './Login';
 
+
 const Auth = (props) => {
 
     return (

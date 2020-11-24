@@ -7,7 +7,6 @@ const IndividualPatient = (props) => {
 
     const [removeOn, setRemoveOn] = useState(false)
     const [showModal, setShowModal] = useState(true)
-
     const DeletePatient = (e) => {
         setRemoveOn(true)
         setShowModal(true)
@@ -32,12 +31,21 @@ const IndividualPatient = (props) => {
                     <ListGroupItem className="list-group-item">Caregiver Notes: {props.p.caregiverNotes}</ListGroupItem>
                 </ListGroup>
                 <Col className="patientButtons">
-                    <Button color="warning" className="updateButton" onClick={() => { props.editUpdatePatient(props.p); props.updateOn() }}>Update Patient</Button>
+
+                    <Button className="newJournalButton" href={`/journal/create/${props.p.id}`}>New Journal Entry</Button>
+
+                    <Button className="viewJournalButton" href={`/journal/${props.p.id}`}>View Journal</Button>
+                </Col>
+
+                <Col className="patientButtons">
+                    <Button className="updateButton" onClick={() => { props.editUpdatePatient(props.p); props.updateOn() }}>Update Patient</Button>
 
                     <Button color="danger" className="deleteButton" type="submit" value="refresh" onClick={(e) => { DeletePatient() }}>Delete Patient</Button>
                 </Col>
             </div>
+
             {removeOn ? <RemovePatient sessionToken={props.sessionToken} p={props.patients} showModal={showModal} setShowModal={setShowModal} fetchPatients={props.fetchPatients} /> : <></>}
+
         </Container>
     )
 

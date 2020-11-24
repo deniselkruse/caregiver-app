@@ -1,5 +1,6 @@
 import React from 'react';
 import { Row } from 'reactstrap';
+import About from '../home/About';
 
 
 const Footer = (props) => {

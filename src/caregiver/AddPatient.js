@@ -7,6 +7,8 @@ import APIURL from '../helpers/env'
 
 
 
+import APIURL from '../helpers/env'
+
 const AddPatient = (props) => {
 
     const [name, setName] = useState('')
@@ -19,10 +21,10 @@ const AddPatient = (props) => {
     const [careStart, setCareStart] = useState('')
     const [caregiverNotes, setCaregiverNotes] = useState('')
 
-    const [startDate, setStartDate] = useState('')
-    const [reqDate, setReqDate] = useState('')
+    const [startDate, setStartDate] = useState('') // Variables used in datePicker modification
+    const [reqDate, setReqDate] = useState('') // Variables used in datePicker modification
 
-    const handleChange = (date) => {
+    const handleChange = (date) => { // DatePicker modification to convert a date object to a string of x/xx/xxxx.
         let tempString = date.toString().substring(4, 7)
         let monthDate;
         switch (tempString) {
@@ -72,8 +74,9 @@ const AddPatient = (props) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        fetch(`${APIURL}/patient/create`, {
-            method: 'POST',
+
+        fetch(`${APIURL}/patient/create`, { //  Utilize the URL from the server-side to refer to the patient/create route.
+            method: 'POST', // Match the POST method utilized in the route in the server-side
             body: JSON.stringify({
                 patient: {
                     name: name,
@@ -89,9 +92,9 @@ const AddPatient = (props) => {
             }),
             headers: new Headers({
                 'Content-Type': 'application/json',
-                'Authorization': props.sessionToken
+                'Authorization': props.sessionToken // The subroute is protected route with validateSession; utilize props to access the sessionToken and allow access to this route
             }),
-        }).then(response => response.json())
+        }).then(response => response.json()) // The information entered into the input fields is turned into a JSON string
             .then((patientData) => {
                 console.log(patientData);
                 setName('');
@@ -103,7 +106,7 @@ const AddPatient = (props) => {
                 setMedication(false);
                 setCareStart('');
                 setCaregiverNotes('');
-                props.fetchPatients();
+                props.fetchPatients(); // fetchPatients function is called to refresh the results with the newly updated data.
             })
     }
     return (

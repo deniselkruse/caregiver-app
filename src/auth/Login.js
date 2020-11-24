@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { Form, FormGroup, Input, Button } from 'reactstrap';
 import APIURL from '../helpers/env'
 
+import APIURL from '../helpers/env'
+
 const Login = (props) => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -17,7 +19,7 @@ const Login = (props) => {
         }).then(
             (response) => response.json()
         ).then((data) => {
-            if (data.sessionToken)          // Could add message about login unsuccessful
+            if (data.sessionToken) 
             props.updateToken(data.sessionToken);  
         })
     }

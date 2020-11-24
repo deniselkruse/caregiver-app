@@ -1,5 +1,10 @@
 .App {
-    text-align: center;
+  text-align: center;
+}
+
+html, body {
+height: 100%;
+font-family: 'Roboto', sans-serif;
 }
 
 html, body {
@@ -35,11 +40,30 @@ html, body {
 /* BANNER */
 
 .banner {
-  margin-top: 0.1em!important;
-  text-align: center;
-  background-color: #7bcdc8; 
-  color: white;
-  max-width: 100;
+margin-top: 0.1em!important;
+text-align: center;
+background-color: #7bcdc8; 
+color: white;
+max-width: 100;
+}
+
+/* FOOTER */
+
+.footerDiv {
+font-weight: 500;
+}
+
+.footer {
+margin-top: 0.1em!important;
+background-color: #5a6175;
+max-width: 100;
+color: white;
+}
+
+.footerRow {
+display: block;
+position: relative;
+text-align: center;
 }
 
 /* FOOTER */
@@ -79,23 +103,66 @@ html, body {
 /* AUTH */
 
 .login, .register{
-  display: inline-block;
-  position: relative;
-  text-align: center;
+display: inline-block;
+position: relative;
+text-align: center;
 }
 
+
 /* .loginHeader, .registerHeader {
-  display: inline-block;
-  position: absolute;
-  text-align: center;
+display: inline-block;
+position: absolute;
+text-align: center;
 } */
 
 .email {
-  width: 20em;
+width: 20em;
 }
 
 .password {
-  width: 20em;
+width: 20em;
+}
+
+/* MENU PAGE */
+
+.patientIcons {
+display: block;
+position: relative;
+text-align: center;
+margin-top: 3em;
+
+}
+
+#viewAll, #findPatient, #addPatient {
+font-size: 5em;
+color: #f58b44;
+
+}
+
+#viewAll:hover, #findPatient:hover, #addPatient:hover {
+  color: navy;
+  transition: 2s ease;
+}
+
+.menuText {
+text-align: center;
+margin-top: .8em;
+color: rgb(90,97,117);
+}
+
+/* FIND PATIENT */
+
+.patientSearch {
+display: inline-block;
+position: relative;
+text-align: center;
+}
+
+.search {
+display: inline-block;
+position: relative;
+text-align: center;
+width: 8em;
 }
 
 /* MENU PAGE */
@@ -158,6 +225,7 @@ html, body {
   display: inline-block;
   position: relative;
   text-align: center;
+  margin-top: .5em;
 }
 
 .updateButton {
@@ -165,6 +233,7 @@ html, body {
   color: white;
   font-weight: 500;
   font-style: bold;
+  background-color: #f47d31;
 }
 
 .deleteButton {
@@ -231,12 +300,59 @@ html, body {
   text-align: center;
 }
 
+/* JOURNAL */
+
+.newJournalButton {
+  width: 10em;
+  color: white;
+  font-weight: 500;
+  font-style: bold;
+  background-color: #828dab;
+}
+
+.viewJournalButton {
+  width: 9em;
+  color: white;
+  font-weight: 500;
+  font-style: bold;
+  margin-left: .5em;
+  background-color: #5a6175;
+}
+
 /* JOURNAL CREATE */
 
 .journalContainer {
   display: inline-block;
   position: relative;
   text-align: center;
+}
+
+#dailyNotes {
+  width: 20em;
+  height: 4em;
+}
+
+/* JOURNAL ENTRIES */
+
+.journalHeader {
+  text-align: center;
+  margin-top: .5em;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 600;
+  color: #828dab;
+}
+
+.journalPatient {
+  text-align: center;
+  margin-top: .5em;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+}
+
+.journalDivider {
+  border: 3px solid;
+  border-radius: 7px;
+  color: #f58b44;
 }
 
 /* ABOUT */

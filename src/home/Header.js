@@ -21,7 +21,7 @@ const Header = (props) => {
                             <NavLink href="/">Home</NavLink>
                         </NavItem>
                         <NavItem>
-                            <NavLink href="/about">About</NavLink>
+                            <NavLink href="/about" onClick={props.about}>About</NavLink>
                         </NavItem>
                         <NavItem>
                             <NavLink href="/mine">View All</NavLink>
@@ -30,7 +30,7 @@ const Header = (props) => {
                             <NavLink href="/patient/create">Add Patient</NavLink>
                         </NavItem>
                         <NavItem>
-                            <Button onClick={props.clickLogout}>Logout</Button>
+                            <Button onClick={props.clickLogout}>Logout</Button> 
                         </NavItem>
                     </Nav>
                 </Collapse>

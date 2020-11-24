@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { Form, FormGroup, Input, Button } from 'reactstrap';
 import APIURL from '../helpers/env'
 
+import APIURL from '../helpers/env'
+
 const Register = (props) => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
