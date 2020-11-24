@@ -7,7 +7,6 @@ const IndividualPatient = (props) => {
 
     const [removeOn, setRemoveOn] = useState(false)
     const [showModal, setShowModal] = useState(true)
-
     const DeletePatient = (e) => {
         setRemoveOn(true)
         setShowModal(true)
