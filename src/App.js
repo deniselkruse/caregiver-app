@@ -8,6 +8,7 @@ import Header from './home/Header';
 import HomePage from './home/HomePage';
 import Footer from './home/Footer';
 
+
 import Auth from './auth/Auth';
 
 function App() {
@@ -41,6 +42,7 @@ function App() {
       <Banner />
       {protectedViews()}
       <Footer />
+    
     </div>
   );
 }
