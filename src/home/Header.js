@@ -30,7 +30,7 @@ const Header = (props) => {
                             <NavLink href="/patient/create">Add Patient</NavLink>
                         </NavItem>
                         <NavItem>
-                            <Button onClick={props.clickLogout}>Logout</Button>
+                            <Button onClick={props.clickLogout}>Logout</Button> 
                         </NavItem>
                     </Nav>
                 </Collapse>
