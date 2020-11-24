@@ -70,7 +70,7 @@ const EditPatient = (props) => {
 
     const patientUpdate = (e, patient) => {
         e.preventDefault();
-        fetch(`${APIURL}/${props.patientToUpdate.name}`, { //Utilize props to grab the specific patient to update
+        fetch(`${APIURL}/patient/${props.patientToUpdate.name}`, { //Utilize props to grab the specific patient to update
             method: 'PUT', //PUT updates the exisiting information with new content from the user. 
             body: JSON.stringify({
                 patient: {
