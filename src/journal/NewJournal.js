@@ -9,20 +9,20 @@ import APIURL from '../helpers/env'
 const NewJournal = (props) => {
 
     const [patient, setPatient] = useState('')
-    const [journalDate, setJournalDate] = useState('') // Auto populate to Today's Date??
+    const [journalDate, setJournalDate] = useState('') 
     const [medicationTime, setMedicationTime] = useState('')
     const [mood, setMood] = useState('')
     const [awake, setAwake] = useState('')
     const [asleep, setAsleep] = useState('')
     const [dailyNotes, setDailyNotes] = useState('')
 
-    const [startDate, setStartDate] = useState('') // Auto populate to Today's Date??
-    const [reqDate, setReqDate] = useState('') // Auto populate to Today's Date??
+    const [startDate, setStartDate] = useState('') // Variables used in datePicker modification
+    const [reqDate, setReqDate] = useState('') // Variables used in datePicker modification
 
     const params = useParams()
     // console.log(params)
 
-    const handleChange = (date) => {
+    const handleChange = (date) => { // DatePicker modification to convert a date object to a string of x/xx/xxxx.
         let tempString = date.toString().substring(4, 7)
         let monthDate;
         switch (tempString) {
@@ -71,8 +71,8 @@ const NewJournal = (props) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        fetch(`${APIURL}/journal/create`, {
-            method: 'POST',
+        fetch(`${APIURL}/journal/create`, { //  Utilize the URL from the server-side to refer to the journal/create route.
+            method: 'POST', // Match the POST method utilized in the route in the server-side
             body: JSON.stringify({
                 journal: {
                     patient: params.id,
@@ -86,9 +86,9 @@ const NewJournal = (props) => {
             }),
             headers: new Headers({
                 'Content-Type': 'application/json',
-                'Authorization': props.sessionToken
+                'Authorization': props.sessionToken // The subroute is protected route with validateSession; utilize props to access the sessionToken and allow access to this route
             }),
-        }).then(response => response.json())
+        }).then(response => response.json()) // The information entered into the input fields is turned into a JSON string
             .then((journalData) => {
                 console.log(journalData);
                 setPatient('');
