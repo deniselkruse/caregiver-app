@@ -17,10 +17,11 @@ const EditPatient = (props) => {
     const [editMedication, setEditMedication] = useState(props.patientToUpdate.medication)
     const [editCareStart, setEditCareStart] = useState(props.patientToUpdate.careStart)
     const [editCaregiverNotes, setEditCaregiverNotes] = useState(props.patientToUpdate.caregiverNotes)
-    const [editStartDate, setEditStartDate] = useState('')
-    const [editReqDate, setEditReqDate] = useState('')
 
-    const handleChange = (date) => {
+    const [editStartDate, setEditStartDate] = useState('') // Variables used in datePicker modification 
+    const [editReqDate, setEditReqDate] = useState('') // Variables used in datePicker modification
+
+    const handleChange = (date) => { // DatePicker modification to convert a date object to a string of x/xx/xxxx.
         let tempString = date.toString().substring(4, 7)
         let monthDate;
         switch (tempString) {
@@ -69,8 +70,8 @@ const EditPatient = (props) => {
 
     const patientUpdate = (e, patient) => {
         e.preventDefault();
-        fetch(`${APIURL}/${props.patientToUpdate.name}`, {
-            method: 'PUT',
+        fetch(`${APIURL}/${props.patientToUpdate.name}`, { //Utilize props to grab the specific patient to update
+            method: 'PUT', //PUT updates the exisiting information with new content from the user. 
             body: JSON.stringify({
                 patient: {
                     name: editName,
@@ -86,12 +87,12 @@ const EditPatient = (props) => {
             }),
             headers: new Headers({
                 'Content-Type': 'application/json',
-                'Authorization': props.sessionToken
+                'Authorization': props.sessionToken // validateSession maintains protected views; props.sessionToken allows validateSession to be utilzied
             })
         }).then((results) => {
             console.log(results);
-            props.fetchPatients();
-            props.updateOff();
+            props.fetchPatients(); // fetchPatients function is called to refresh the results with the newly updated data.
+            props.updateOff(); // updateOff function resets the update form once the new data is sent 
         })
     }
 
