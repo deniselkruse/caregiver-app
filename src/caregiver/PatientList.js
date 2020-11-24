@@ -4,6 +4,8 @@ import { Button, Col, Form, FormGroup, Input, Label, Row } from 'reactstrap';
 import IndividualPatient from './IndividualPatient';
 import EditPatient from './EditPatient';
 
+import APIURL from '../helpers/env'
+
 const PatientList = (props) => {
 
     const [patients, setPatients] = useState([]);
@@ -12,7 +14,7 @@ const PatientList = (props) => {
     const [search, setSearch] = useState('');
 
     const fetchPatients = () => {
-        fetch('http://localhost:3000/patient', {
+        fetch(`${APIURL}/patient`, {
             method: 'GET',
             headers: new Headers({
                 'Content-Type': 'application/json',
@@ -26,16 +28,14 @@ const PatientList = (props) => {
     }
 
     const fetchResults = (e) => {
-
-        fetch(`http://localhost:3000/patient/${search}`, {
+        fetch(`${APIURL}/patient/${search}`, {
             method: 'GET',
             headers: new Headers({
                 'Content-Type':
                     'application/json',
                 'Authorization': props.sessionToken
             })
-        })
-            .then(response => response.json())
+        }).then(response => response.json())
             .then((data) => {
                 (console.log(data))
                 setPatients(data);
@@ -81,6 +81,7 @@ const PatientList = (props) => {
                     </Col>
                 </Row>
             </FormGroup>
+
             {patients.map((patients, i) =>
                 <IndividualPatient p={patients} key={i} patients={patients} editUpdatePatient={editUpdatePatient} updateOn={updateOn} fetchPatients={fetchPatients} sessionToken={props.sessionToken} />)}
 
