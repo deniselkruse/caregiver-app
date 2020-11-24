@@ -84,12 +84,6 @@ html, body {
   text-align: center;
 }
 
-/* .loginHeader, .registerHeader {
-  display: inline-block;
-  position: absolute;
-  text-align: center;
-} */
-
 .email {
   width: 20em;
 }
@@ -158,6 +152,7 @@ html, body {
   display: inline-block;
   position: relative;
   text-align: center;
+  margin-top: .5em;
 }
 
 .updateButton {
@@ -165,6 +160,7 @@ html, body {
   color: white;
   font-weight: 500;
   font-style: bold;
+  background-color: #f47d31;
 }
 
 .deleteButton {
@@ -231,12 +227,59 @@ html, body {
   text-align: center;
 }
 
+/* JOURNAL */
+
+.newJournalButton {
+  width: 10em;
+  color: white;
+  font-weight: 500;
+  font-style: bold;
+  background-color: #828dab;
+}
+
+.viewJournalButton {
+  width: 9em;
+  color: white;
+  font-weight: 500;
+  font-style: bold;
+  margin-left: .5em;
+  background-color: #5a6175;
+}
+
 /* JOURNAL CREATE */
 
 .journalContainer {
   display: inline-block;
   position: relative;
   text-align: center;
+}
+
+#dailyNotes {
+  width: 20em;
+  height: 4em;
+}
+
+/* JOURNAL ENTRIES */
+
+.journalHeader {
+  text-align: center;
+  margin-top: .5em;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 600;
+  color: #828dab;
+}
+
+.journalPatient {
+  text-align: center;
+  margin-top: .5em;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+}
+
+.journalDivider {
+  border: 3px solid;
+  border-radius: 7px;
+  color: #f58b44;
 }
 
 /* ABOUT */

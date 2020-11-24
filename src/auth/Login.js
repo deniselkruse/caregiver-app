@@ -1,13 +1,15 @@
 import React, { useState } from 'react';
 import { Form, FormGroup, Input, Button } from 'reactstrap';
 
+import APIURL from '../helpers/env'
+
 const Login = (props) => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        fetch('http://localhost:3000/user/login', {
+        fetch(`${APIURL}/user/login`, {
             method: 'POST',
             body: JSON.stringify({ user: { email: email, password: password } }),
             headers: new Headers({
@@ -16,7 +18,7 @@ const Login = (props) => {
         }).then(
             (response) => response.json()
         ).then((data) => {
-            if (data.sessionToken)          // Could add message about login unsuccessful
+            if (data.sessionToken) 
             props.updateToken(data.sessionToken);  
         })
     }
