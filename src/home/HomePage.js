@@ -9,7 +9,7 @@ import About from '../home/About';
 import NewJournal from '../journal/NewJournal';
 import ViewJournals from '../journal/ViewJournals';
 
-import APIURL from '../helpers/env'
+URL from '../helpers/env'
 
 const HomePage = (props) => {
 

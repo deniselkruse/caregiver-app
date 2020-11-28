@@ -3,7 +3,7 @@ import { Button, Container, Form, Label, Input, Col, Row } from 'reactstrap';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
-import APIURL from '../helpers/env'
+import URL from '../helpers/env'
 
 const AddPatient = (props) => {
 

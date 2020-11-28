@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 
 import JournalEntries from './JournalEntries';
 
-import APIURL from '../helpers/env'
+import URL from '../helpers/env'
 
 const ViewJournals = (props) => {
 

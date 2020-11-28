@@ -4,7 +4,7 @@ import { Button, Col, Form, FormGroup, Input, Label, Row } from 'reactstrap';
 import IndividualPatient from './IndividualPatient';
 import EditPatient from './EditPatient';
 
-import APIURL from '../helpers/env'
+URL from '../helpers/env'
 
 const PatientList = (props) => {
 

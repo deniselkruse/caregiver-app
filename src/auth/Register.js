@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Form, FormGroup, Input, Button } from 'reactstrap';
 
-import APIURL from '../helpers/env'
+URL from '../helpers/env'
 
 const Register = (props) => {
     const [email, setEmail] = useState('');

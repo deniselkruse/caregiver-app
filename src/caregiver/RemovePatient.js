@@ -1,7 +1,7 @@
 import React, { } from 'react'
 import { Button, Modal, ModalBody, ModalHeader } from 'reactstrap'
 
-import APIURL from '../helpers/env'
+URL from '../helpers/env'
 
 const RemovePatient = (props) => {
     const DeletePatient = (e) => {

@@ -4,7 +4,7 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { useParams } from 'react-router-dom';
 
-import APIURL from '../helpers/env'
+URL from '../helpers/env'
 
 const NewJournal = (props) => {
 
